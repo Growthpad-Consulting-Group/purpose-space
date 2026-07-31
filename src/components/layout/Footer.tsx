@@ -20,7 +20,7 @@ function HexPattern() {
   return (
     <svg
       aria-hidden
-      className="absolute inset-0 h-full w-full text-brand"
+      className="absolute inset-0 h-full w-full text-brand-gold"
       style={{
         maskImage: "linear-gradient(to right, transparent, transparent 45%, black 100%)",
         WebkitMaskImage:
@@ -58,7 +58,7 @@ function HexPattern() {
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-brand-dark text-brand-cream">
+    <footer className="relative overflow-hidden bg-brand-green text-brand-ivory">
       <HexPattern />
       <div className="container-fluid relative py-16 lg:py-20">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[2.2fr_1fr_1fr_1fr]">
@@ -69,12 +69,12 @@ export function Footer() {
               width={230}
               height={70}
             />
-            <h2 className="mt-8 font-heading text-3xl leading-tight text-brand-cream sm:text-4xl">
+            <h2 className="mt-8 font-heading text-3xl leading-tight text-brand-ivory sm:text-4xl">
               Considered real estate guidance,
               <br />
               rooted in Kenya.
             </h2>
-            <p className="mt-6 text-xs font-medium tracking-widest text-brand uppercase">
+            <p className="mt-6 text-xs font-medium tracking-widest text-brand-gold uppercase">
               Nairobi, Kenya
             </p>
           </div>
@@ -82,7 +82,7 @@ export function Footer() {
           <FooterColumn title="Navigate">
             {navigateLinks.map((label) => (
               <li key={label}>
-                <a href="#" className="hover:text-brand">
+                <a href="#" className="hover:text-brand-gold">
                   {label}
                 </a>
               </li>
@@ -92,7 +92,7 @@ export function Footer() {
           <FooterColumn title="Work With Us">
             {workWithUsLinks.map((label) => (
               <li key={label}>
-                <a href="#" className="hover:text-brand">
+                <a href="#" className="hover:text-brand-gold">
                   {label}
                 </a>
               </li>
@@ -102,8 +102,8 @@ export function Footer() {
           <FooterColumn title="Connect">
             {connectLinks.map(({ label, icon, href }) => (
               <li key={label}>
-                <a href={href} className="flex items-center gap-2 hover:text-brand">
-                  <Icon icon={icon} className="text-lg text-brand" />
+                <a href={href} className="flex items-center gap-2 hover:text-brand-gold">
+                  <Icon icon={icon} className="text-lg text-brand-gold" />
                   {label}
                 </a>
               </li>
@@ -111,15 +111,15 @@ export function Footer() {
           </FooterColumn>
         </div>
 
-        <div className="mt-16 flex flex-col gap-4 border-t border-brand/40 pt-6 text-xs tracking-wide text-brand-cream/80 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-16 flex flex-col gap-4 border-t border-brand-gold/40 pt-6 text-xs tracking-wide text-brand-ivory/80 sm:flex-row sm:items-center sm:justify-between">
           <p className="uppercase">
             &copy; {new Date().getFullYear()} Purpose Space Realtors
           </p>
           <div className="flex gap-6">
-            <a href="#" className="uppercase hover:text-brand">
+            <a href="#" className="uppercase hover:text-brand-gold">
               Privacy Policy
             </a>
-            <a href="#" className="uppercase hover:text-brand">
+            <a href="#" className="uppercase hover:text-brand-gold">
               Terms of Use
             </a>
           </div>
@@ -138,10 +138,10 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <h3 className="text-xs font-semibold tracking-widest text-brand uppercase">
+      <h3 className="text-xs font-semibold tracking-widest text-brand-gold uppercase">
         {title}
       </h3>
-      <ul className="mt-4 space-y-3 text-sm text-brand-cream/90">{children}</ul>
+      <ul className="mt-4 space-y-3 text-sm text-brand-ivory/90">{children}</ul>
     </div>
   );
 }

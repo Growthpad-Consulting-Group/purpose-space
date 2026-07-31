@@ -4,18 +4,20 @@
   --background: #ffffff;
   --foreground: #171717;
 
-  --color-brand: #c6a15b;
-  --color-brand-dark: #063c3c;
-  --color-brand-cream: #f4f0e8;
+  --color-brand-gold: #c6a15b;
+  --color-brand-green: #063c3c;
+  --color-brand-ivory: #f4f0e8;
+  --color-brand-ink: #111111;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --color-brand: var(--color-brand);
-  --color-brand-dark: var(--color-brand-dark);
-  --color-brand-cream: var(--color-brand-cream);
+  --color-brand-gold: var(--color-brand-gold);
+  --color-brand-green: var(--color-brand-green);
+  --color-brand-ivory: var(--color-brand-ivory);
+  --color-brand-ink: var(--color-brand-ink);
 
   --font-sans: var(--font-body);
   --font-heading: var(--font-heading);

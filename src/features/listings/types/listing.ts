@@ -1,9 +1,10 @@
 export interface Listing {
   id: string;
+  slug: string;
   title: string;
   location: string;
-  price: number;
-  bedrooms: number;
-  bathrooms: number;
+  status: string;
+  specs: string[];
+  priceDisplay: string;
   imageUrl: string;
 }

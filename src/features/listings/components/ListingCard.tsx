@@ -1,42 +1,52 @@
 import { Icon } from "@iconify/react";
+import Image from "next/image";
 import type { Listing } from "../types/listing";
 
-function formatPrice(price: number) {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0,
-  }).format(price);
-}
-
-export function ListingCard({ listing }: { listing: Listing }) {
+export function ListingCard({
+  listing,
+  index,
+}: {
+  listing: Listing;
+  index: number;
+}) {
   return (
-    <div className="overflow-hidden rounded-xl border border-black/10 bg-white shadow-sm transition hover:shadow-md dark:border-white/10 dark:bg-neutral-900">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={listing.imageUrl}
-        alt={listing.title}
-        className="h-48 w-full object-cover"
-      />
-      <div className="space-y-2 p-4">
-        <h3 className="font-heading text-lg text-brand-dark dark:text-brand-cream">
-          {listing.title}
-        </h3>
-        <p className="flex items-center gap-1 text-sm text-neutral-500">
-          <Icon icon="mdi:map-marker" className="text-base" />
-          {listing.location}
+    <div className="group">
+      <div className="relative aspect-3/4 w-full overflow-hidden rounded-t-[220px] transition-[border-radius] duration-500 ease-out group-hover:rounded-t-none">
+        <Image
+          src={listing.imageUrl}
+          alt={listing.title}
+          fill
+          sizes="(min-width: 1024px) 33vw, 100vw"
+          className="object-cover"
+        />
+      </div>
+
+      <p className="mt-4 text-xs font-semibold tracking-widest uppercase">
+        <span className="text-brand-gold">{String(index + 1).padStart(2, "0")}</span>{" "}
+        <span className="text-brand-green/60">
+          {listing.status} · {listing.location}
+        </span>
+      </p>
+      <h3 className="mt-1 font-heading text-3xl text-brand-green">
+        {listing.title}
+      </h3>
+      <p className="mt-2 text-xs tracking-wide text-brand-green uppercase">
+        {listing.specs.join(" · ")}
+      </p>
+
+      <div className="mt-3 flex items-center justify-between">
+        <p className="text-sm font-medium text-brand-green">
+          {listing.priceDisplay}
         </p>
-        <p className="text-xl font-bold text-brand">
-          {formatPrice(listing.price)}
-        </p>
-        <div className="flex items-center gap-4 text-sm text-neutral-500">
-          <span className="flex items-center gap-1">
-            <Icon icon="mdi:bed" /> {listing.bedrooms}
+        <a
+          href={`/properties/${listing.slug}`}
+          className="flex items-center gap-1 text-sm font-medium text-brand-green"
+        >
+          <span className="transition-transform duration-300 ease-out group-hover:-translate-x-1">
+            View property
           </span>
-          <span className="flex items-center gap-1">
-            <Icon icon="mdi:shower" /> {listing.bathrooms}
-          </span>
-        </div>
+          <Icon icon="mdi:arrow-right" className="text-brand-gold" />
+        </a>
       </div>
     </div>
   );
