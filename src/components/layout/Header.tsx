@@ -162,7 +162,7 @@ export function Header() {
           active={scrolled}
           className={`flex flex-col transition-all duration-500 ease-out ${
             scrolled
-              ? "rounded-3xl bg-brand-ivory/0"
+              ? "rounded-xl bg-brand-ivory/0"
               : "rounded-none bg-brand-ivory"
           }`}
         >
