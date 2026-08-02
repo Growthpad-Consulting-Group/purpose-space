@@ -1,4 +1,5 @@
 import { Icon } from "@iconify/react";
+import Link from "next/link";
 
 export function NextThreshold() {
   return (
@@ -24,20 +25,20 @@ export function NextThreshold() {
           </p>
         </div>
 
-        <div className="flex flex-col items-center gap-4">
-          <a
+        <div className="flex flex-col items-center gap-4 sm:items-start lg:items-center">
+          <Link
             href="/properties"
-            className="rounded-md border border-brand-gold px-6 py-3 text-sm font-medium text-brand-green transition-colors hover:border-brand-green hover:bg-brand-green hover:text-brand-ivory"
+            className="w-full rounded-md border border-brand-gold px-6 py-3 text-center text-sm font-medium text-brand-green transition-colors hover:border-brand-green hover:bg-brand-green hover:text-brand-ivory sm:w-auto"
           >
             Explore properties
-          </a>
-          <a
+          </Link>
+          <Link
             href="#"
             className="flex items-center gap-2 text-sm font-medium text-brand-green hover:text-brand-gold"
           >
             Start a conversation
             <Icon icon="mdi:arrow-right" className="text-base" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

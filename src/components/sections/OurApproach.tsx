@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 interface Step {
   title: string;
   description: string;
@@ -46,26 +48,33 @@ export function OurApproach() {
         </div>
 
         <div className="relative mt-16">
+          {/* connecting line — horizontal on sm+, vertical on mobile */}
           <div
             aria-hidden
             className="absolute top-1 left-0 hidden h-px w-[calc(66.6667%+1.333rem)] bg-brand-green/60 sm:block"
           />
+          <div
+            aria-hidden
+            className="absolute top-1 bottom-1 left-1 w-px bg-brand-green/60 sm:hidden"
+          />
           <div className="relative grid grid-cols-1 gap-y-10 sm:grid-cols-3 sm:gap-x-8">
             {steps.map((step, index) => (
-              <div key={step.title} className="flex flex-col">
+              <div key={step.title} className="flex gap-4 sm:flex-col sm:gap-0">
                 <span
                   aria-hidden
-                  className="h-2 w-2 rounded-full border border-brand-green bg-white"
+                  className="mt-1 h-2 w-2 shrink-0 rounded-full border border-brand-green bg-white sm:mt-0"
                 />
-                <span className="mt-6 text-xs font-medium text-brand-green">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-2 font-heading text-3xl text-brand-green">
-                  {step.title}
-                </h3>
-                <p className="mt-4 max-w-xs text-base text-black/70">
-                  {step.description}
-                </p>
+                <div>
+                  <span className="text-xs font-medium text-brand-green sm:mt-6 sm:block">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="mt-1 font-heading text-2xl text-brand-green sm:mt-2 sm:text-3xl">
+                    {step.title}
+                  </h3>
+                  <p className="mt-2 max-w-xs text-base text-black/70 sm:mt-4">
+                    {step.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -81,19 +90,19 @@ export function OurApproach() {
               next decision.
             </p>
           </div>
-          <div className="flex flex-wrap gap-4">
-            <a
+          <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+            <Link
               href="#"
-              className="rounded-md border border-brand-gold px-6 py-3 text-sm font-medium text-brand-green transition-colors hover:border-brand-green hover:bg-brand-green hover:text-brand-ivory"
+              className="rounded-md border border-brand-gold px-6 py-3 text-center text-sm font-medium text-brand-green transition-colors hover:border-brand-green hover:bg-brand-green hover:text-brand-ivory"
             >
               Start a conversation
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
-              className="rounded-md border border-brand-gold px-6 py-3 text-sm font-medium text-brand-green transition-colors hover:border-brand-green hover:bg-brand-green hover:text-brand-ivory"
+              className="rounded-md border border-brand-gold px-6 py-3 text-center text-sm font-medium text-brand-green transition-colors hover:border-brand-green hover:bg-brand-green hover:text-brand-ivory"
             >
               Request a valuation
-            </a>
+            </Link>
           </div>
         </div>
       </div>

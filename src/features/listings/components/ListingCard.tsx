@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
 import Image from "next/image";
+import Link from "next/link";
 import type { Listing } from "../types/listing";
 
 export function ListingCard({
@@ -38,7 +39,7 @@ export function ListingCard({
         <p className="text-sm font-medium text-brand-green">
           {listing.priceDisplay}
         </p>
-        <a
+        <Link
           href={`/properties/${listing.slug}`}
           className="flex items-center gap-1 text-sm font-medium text-brand-green"
         >
@@ -46,7 +47,7 @@ export function ListingCard({
             View property
           </span>
           <Icon icon="mdi:arrow-right" className="text-brand-gold" />
-        </a>
+        </Link>
       </div>
     </div>
   );

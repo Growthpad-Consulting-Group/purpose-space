@@ -1,11 +1,12 @@
 import { Icon } from "@iconify/react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Hero() {
   return (
     <section className="container-fluid flex min-h-[calc(100vh-80px)] items-center py-8 lg:py-12">
       <div className="grid w-full items-center gap-16 lg:grid-cols-[1fr_30rem]">
-        <div>
+        <div className="animate-hero-text">
           <p className="text-xs font-semibold tracking-widest text-brand-green uppercase">
             Property, with purpose
           </p>
@@ -19,23 +20,23 @@ export function Hero() {
             Space brings considered guidance to every property decision.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <a
-              href="#"
+            <Link
+              href="/properties"
               className="rounded-md border border-brand-gold px-6 py-3 text-sm font-medium text-brand-green transition-colors hover:bg-brand-green hover:border-brand-green hover:text-brand-ivory"
             >
               Explore properties
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="flex items-center gap-2 rounded-md border border-brand-gold px-6 py-3 text-sm font-medium text-brand-green transition-colors hover:bg-brand-green hover:border-brand-green hover:text-brand-ivory"
             >
               Speak to an advisor
               <Icon icon="mdi:arrow-right" className="text-base" />
-            </a>
+            </Link>
           </div>
         </div>
 
-        <div className="relative aspect-652/872 w-full">
+        <div className="relative aspect-652/872 w-full animate-hero-image">
           <div
             aria-hidden
             className="absolute top-4 left-4 h-full w-full rounded-t-[326px] border border-brand-gold"

@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
 import Image from "next/image";
+import Link from "next/link";
 
 const navigateLinks = ["Properties", "Services", "About Purpose Space"];
 
@@ -63,12 +64,14 @@ export function Footer() {
       <div className="container-fluid relative py-16 lg:py-20">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[2.2fr_1fr_1fr_1fr]">
           <div>
-            <Image
-              src="/brand/footer-logo.svg"
-              alt="Purpose Space Realtors"
-              width={230}
-              height={70}
-            />
+            <Link href="/">
+              <Image
+                src="/brand/footer-logo.svg"
+                alt="Purpose Space Realtors"
+                width={230}
+                height={70}
+              />
+            </Link>
             <h2 className="mt-8 font-heading text-3xl leading-tight text-brand-ivory sm:text-4xl">
               Considered real estate guidance,
               <br />
@@ -82,9 +85,9 @@ export function Footer() {
           <FooterColumn title="Navigate">
             {navigateLinks.map((label) => (
               <li key={label}>
-                <a href="#" className="hover:text-brand-gold">
+                <Link href="#" className="hover:text-brand-gold">
                   {label}
-                </a>
+                </Link>
               </li>
             ))}
           </FooterColumn>
@@ -92,9 +95,9 @@ export function Footer() {
           <FooterColumn title="Work With Us">
             {workWithUsLinks.map((label) => (
               <li key={label}>
-                <a href="#" className="hover:text-brand-gold">
+                <Link href="#" className="hover:text-brand-gold">
                   {label}
-                </a>
+                </Link>
               </li>
             ))}
           </FooterColumn>
@@ -102,10 +105,17 @@ export function Footer() {
           <FooterColumn title="Connect">
             {connectLinks.map(({ label, icon, href }) => (
               <li key={label}>
-                <a href={href} className="flex items-center gap-2 hover:text-brand-gold">
-                  <Icon icon={icon} className="text-lg text-brand-gold" />
-                  {label}
-                </a>
+                {href.startsWith("mailto:") ? (
+                  <a href={href} className="flex items-center gap-2 hover:text-brand-gold">
+                    <Icon icon={icon} className="text-lg text-brand-gold" />
+                    {label}
+                  </a>
+                ) : (
+                  <Link href={href} className="flex items-center gap-2 hover:text-brand-gold">
+                    <Icon icon={icon} className="text-lg text-brand-gold" />
+                    {label}
+                  </Link>
+                )}
               </li>
             ))}
           </FooterColumn>
@@ -116,12 +126,12 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Purpose Space Realtors
           </p>
           <div className="flex gap-6">
-            <a href="#" className="uppercase hover:text-brand-gold">
+            <Link href="#" className="uppercase hover:text-brand-gold">
               Privacy Policy
-            </a>
-            <a href="#" className="uppercase hover:text-brand-gold">
+            </Link>
+            <Link href="#" className="uppercase hover:text-brand-gold">
               Terms of Use
-            </a>
+            </Link>
           </div>
         </div>
       </div>

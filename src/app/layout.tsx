@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Tenor_Sans, Figtree } from "next/font/google";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { ScrollToTop } from "@/shared/ui/ScrollToTop";
 import "./globals.css";
 
 const tenorSans = Tenor_Sans({
@@ -28,7 +31,12 @@ export default function RootLayout({
       lang="en"
       className={`${tenorSans.variable} ${figtree.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        <Header />
+        {children}
+        <Footer />
+        <ScrollToTop />
+      </body>
     </html>
   );
 }

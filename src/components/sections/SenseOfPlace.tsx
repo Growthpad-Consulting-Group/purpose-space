@@ -1,10 +1,10 @@
-import { Icon } from "@iconify/react";
+import Link from "next/link";
 
 export function SenseOfPlace() {
   return (
     <section>
       <div
-        className="relative flex aspect-[2.8/1] items-end overflow-hidden bg-fixed bg-center bg-cover"
+        className="relative flex aspect-square items-end overflow-hidden bg-fixed bg-center bg-cover sm:aspect-video lg:aspect-[2.8/1]"
         style={{ backgroundImage: "url('/images/sense-of-place.jpg')" }}
       >
         <div
@@ -44,12 +44,12 @@ export function SenseOfPlace() {
             <p className="text-xs font-medium tracking-widest text-brand-green uppercase mt-6">
               Space / Connection / Character
             </p>
-            <a
-              href="#"
+            <Link
+              href="/properties"
               className="inline-flex w-fit items-center gap-2 rounded-md border border-brand-gold px-6 py-3 text-sm font-medium text-brand-green transition-colors hover:border-brand-green hover:bg-brand-green hover:text-brand-ivory"
             >
               Find your place
-            </a>
+            </Link>
           </div>
         </div>
       </div>

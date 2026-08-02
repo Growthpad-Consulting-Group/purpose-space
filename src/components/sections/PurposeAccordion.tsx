@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Icon } from "@iconify/react";
 
 interface PurposeItem {
@@ -104,12 +105,12 @@ export function PurposeAccordion() {
                       <p className="max-w-md text-base text-brand-green/70">
                         {item.description}
                       </p>
-                      <a
+                      <Link
                         href="#"
                         className="mt-6 inline-block rounded-md border border-brand-gold px-6 py-3 text-sm font-medium text-brand-green transition-colors hover:border-brand-green hover:bg-brand-green hover:text-brand-ivory"
                       >
                         {item.cta}
-                      </a>
+                      </Link>
                     </div>
                     <div className="relative h-64 w-full overflow-hidden rounded-2xl lg:h-72">
                       <Image

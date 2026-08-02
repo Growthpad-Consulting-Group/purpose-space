@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Icon } from "@iconify/react";
 
 interface ExpertiseItem {
@@ -100,12 +101,12 @@ export function ExpertiseAccordion() {
                         <p className="max-w-md text-base text-brand-green/70">
                           {item.description}
                         </p>
-                        <a
+                        <Link
                           href="#"
                           className="mt-6 inline-block rounded-md border border-brand-gold px-6 py-3 text-sm font-medium text-brand-green transition-colors hover:border-brand-green hover:bg-brand-green hover:text-brand-ivory"
                         >
                           {item.cta}
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -115,7 +116,7 @@ export function ExpertiseAccordion() {
           </div>
         </div>
 
-        <div className="relative h-full min-h-112 w-full overflow-hidden rounded-t-full">
+        <div className="relative hidden h-full min-h-112 w-full overflow-hidden rounded-t-full lg:block">
           {expertiseItems.map((item, index) => (
             <Image
               key={item.title}
