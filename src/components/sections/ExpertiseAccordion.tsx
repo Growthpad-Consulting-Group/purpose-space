@@ -17,21 +17,21 @@ const expertiseItems: ExpertiseItem[] = [
     description:
       "Considered property care that protects value, supports occupants and gives owners greater peace of mind.",
     cta: "Explore management",
-    image: "/images/property-to-care.jpg",
+    image: "/images/property-management.png",
   },
   {
     title: "Sales & Letting",
     description:
       "Guided sales and letting, matching the right people to the right spaces with clarity at every step.",
     cta: "Explore sales & letting",
-    image: "/images/property-to-let.jpg",
+    image: "/images/sales-letting.png",
   },
   {
     title: "Real Estate Advisory",
     description:
       "Independent advice on investment, valuation and strategy, grounded in local market understanding.",
     cta: "Explore advisory",
-    image: "/images/place-to-call-home.jpg",
+    image: "/images/space-for-business.jpg",
   },
 ];
 

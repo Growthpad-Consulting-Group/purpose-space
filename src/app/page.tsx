@@ -6,6 +6,8 @@ import { ExpertiseAccordion } from "@/components/sections/ExpertiseAccordion";
 import { WhyPurposeSpace } from "@/components/sections/WhyPurposeSpace";
 import { Manifesto } from "@/components/sections/Manifesto";
 import { SenseOfPlace } from "@/components/sections/SenseOfPlace";
+import { OurApproach } from "@/components/sections/OurApproach";
+import { NextThreshold } from "@/components/sections/NextThreshold";
 import { ListingCard } from "@/features/listings/components/ListingCard";
 import { getListings } from "@/features/listings/api/get-listings";
 
@@ -53,6 +55,8 @@ export default async function Home() {
       <WhyPurposeSpace />
       <ExpertiseAccordion />
       <SenseOfPlace />
+      <OurApproach />
+      <NextThreshold />
       <Footer />
     </div>
   );
