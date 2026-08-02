@@ -58,6 +58,7 @@ function NavLinks() {
               setHoverRect(next);
               setLastHoverRect(next);
             }}
+            onClick={() => setHoverRect(null)}
             className={`relative z-10 rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-white ${
               isCta
                 ? "ml-4 border border-brand-gold text-brand-green hover:border-brand-green"
