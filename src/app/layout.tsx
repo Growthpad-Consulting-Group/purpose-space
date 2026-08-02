@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ViewTransition } from "react";
 import { Tenor_Sans, Figtree } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -33,7 +34,7 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col">
         <Header />
-        {children}
+        <ViewTransition>{children}</ViewTransition>
         <Footer />
         <ScrollToTop />
       </body>

@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Icon } from "@iconify/react";
 import GlassPanel from "@/shared/ui/GlassPanel";
 import { navLinks } from "@/config/nav";
@@ -13,6 +14,7 @@ const navItems: { label: string; href: string; isCta?: boolean }[] = [
 ];
 
 function NavLinks() {
+  const pathname = usePathname();
   const containerRef = useRef<HTMLDivElement>(null);
   const linkRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
   const [hoverRect, setHoverRect] = useState<{ left: number; width: number } | null>(null);
@@ -37,32 +39,37 @@ function NavLinks() {
         }}
         className="absolute top-0 h-full rounded-md bg-brand-green ring-1 ring-brand-gold/30 transition-[left,width,opacity] duration-300 ease-out"
       />
-      {navItems.map(({ label, href, isCta }) => (
-        <Link
-          key={label}
-          href={href}
-          ref={(el) => {
-            linkRefs.current[label] = el;
-          }}
-          onMouseEnter={() => {
-            const el = linkRefs.current[label];
-            const container = containerRef.current;
-            if (!el || !container) return;
-            const elRect = el.getBoundingClientRect();
-            const containerRect = container.getBoundingClientRect();
-            const next = { left: elRect.left - containerRect.left, width: elRect.width };
-            setHoverRect(next);
-            setLastHoverRect(next);
-          }}
-          className={`relative z-10 rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-white ${
-            isCta
-              ? "ml-4 border border-brand-gold text-brand-green hover:border-brand-green"
-              : "text-brand-green"
-          }`}
-        >
-          {label}
-        </Link>
-      ))}
+      {navItems.map(({ label, href, isCta }) => {
+        const isActive = !isCta && href === pathname;
+        return (
+          <Link
+            key={label}
+            href={href}
+            ref={(el) => {
+              linkRefs.current[label] = el;
+            }}
+            onMouseEnter={() => {
+              const el = linkRefs.current[label];
+              const container = containerRef.current;
+              if (!el || !container) return;
+              const elRect = el.getBoundingClientRect();
+              const containerRect = container.getBoundingClientRect();
+              const next = { left: elRect.left - containerRect.left, width: elRect.width };
+              setHoverRect(next);
+              setLastHoverRect(next);
+            }}
+            className={`relative z-10 rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-white ${
+              isCta
+                ? "ml-4 border border-brand-gold text-brand-green hover:border-brand-green"
+                : isActive
+                  ? "text-brand-gold"
+                  : "text-brand-green"
+            }`}
+          >
+            {label}
+          </Link>
+        );
+      })}
     </div>
   );
 }
@@ -74,6 +81,8 @@ function MobileMenu({
   isOpen: boolean;
   onClose: () => void;
 }) {
+  const pathname = usePathname();
+
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
     return () => {
@@ -89,20 +98,25 @@ function MobileMenu({
     >
       <div className="overflow-hidden">
         <nav className="container-fluid flex flex-col gap-1 border-t border-brand-green/10 py-4">
-          {navItems.map(({ label, href, isCta }) => (
-            <Link
-              key={label}
-              href={href}
-              onClick={onClose}
-              className={`rounded-md px-4 py-3 text-base font-medium transition-colors ${
-                isCta
-                  ? "mt-2 border border-brand-gold text-center text-brand-green"
-                  : "text-brand-green hover:bg-brand-green/5"
-              }`}
-            >
-              {label}
-            </Link>
-          ))}
+          {navItems.map(({ label, href, isCta }) => {
+            const isActive = !isCta && href === pathname;
+            return (
+              <Link
+                key={label}
+                href={href}
+                onClick={onClose}
+                className={`rounded-md px-4 py-3 text-base font-medium transition-colors ${
+                  isCta
+                    ? "mt-2 border border-brand-gold text-center text-brand-green"
+                    : isActive
+                      ? "text-brand-gold"
+                      : "text-brand-green hover:bg-brand-green/5"
+                }`}
+              >
+                {label}
+              </Link>
+            );
+          })}
         </nav>
       </div>
     </div>
@@ -152,8 +166,8 @@ export function Header() {
       className="sticky top-0 z-50 transition-transform duration-500 ease-out"
     >
       <div
-        className={`transition-all duration-500 ease-out ${
-          scrolled ? "container-fluid pt-4" : "w-full px-0"
+        className={`container-fluid transition-all duration-500 ease-out ${
+          scrolled ? "pt-4" : ""
         }`}
       >
         <GlassPanel
@@ -167,8 +181,8 @@ export function Header() {
           }`}
         >
           <div
-            className={`flex items-center justify-between px-6 transition-all duration-500 ease-out ${
-              scrolled ? "h-16" : "h-20 lg:px-12"
+            className={`flex items-center justify-between transition-all duration-500 ease-out ${
+              scrolled ? "h-16" : "h-20"
             }`}
           >
             <Link href="/" onClick={() => setMobileOpen(false)}>

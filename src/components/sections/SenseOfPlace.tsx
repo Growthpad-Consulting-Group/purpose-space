@@ -36,7 +36,7 @@ export function SenseOfPlace() {
             </h3>
           </div>
           <div className="flex flex-col gap-8">
-            <p className="max-w-lg text-base text-black">
+            <p className="max-w-lg text-base text-brand-ink">
               We consider the setting around every property — access,
               privacy, connection, character and the way it supports life or
               business.

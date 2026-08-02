@@ -6,7 +6,7 @@ import { WhyPurposeSpace } from "@/components/sections/WhyPurposeSpace";
 import { Manifesto } from "@/components/sections/Manifesto";
 import { SenseOfPlace } from "@/components/sections/SenseOfPlace";
 import { OurApproach } from "@/components/sections/OurApproach";
-import { NextThreshold } from "@/components/sections/NextThreshold";
+import { ClosingCta } from "@/components/sections/ClosingCta";
 import { ListingCard } from "@/features/listings/components/ListingCard";
 import { getListings } from "@/features/listings/api/get-listings";
 import { Reveal } from "@/shared/ui/Reveal";
@@ -70,7 +70,21 @@ export default async function Home() {
         <OurApproach />
       </Reveal>
       <Reveal>
-        <NextThreshold />
+        <ClosingCta
+          eyebrow="The next threshold"
+          heading={
+            <>
+              Your next
+              <br />
+              threshold.
+            </>
+          }
+          description="Whether you are looking for your next property or deciding what comes next for one you own, we are ready to guide you."
+          primaryLabel="Explore properties"
+          primaryHref="/properties"
+          secondaryLabel="Start a conversation"
+          secondaryHref="#"
+        />
       </Reveal>
     </>
   );

@@ -36,7 +36,7 @@ export function OurApproach() {
             <br />
             forward.
           </h2>
-          <p className="max-w-md text-base text-black lg:justify-self-end">
+          <p className="max-w-md text-base text-brand-ink lg:justify-self-end">
             Every engagement begins with understanding what matters—to you,
             your property and the outcome you want.
           </p>
@@ -71,7 +71,7 @@ export function OurApproach() {
                   <h3 className="mt-1 font-heading text-2xl text-brand-green sm:mt-2 sm:text-3xl">
                     {step.title}
                   </h3>
-                  <p className="mt-2 max-w-xs text-base text-black/70 sm:mt-4">
+                  <p className="mt-2 max-w-xs text-base text-brand-ink sm:mt-4">
                     {step.description}
                   </p>
                 </div>
@@ -85,7 +85,7 @@ export function OurApproach() {
             <h3 className="font-heading text-3xl text-brand-green">
               Ready to move forward?
             </h3>
-            <p className="mt-2 text-base text-black/70">
+            <p className="mt-2 text-base text-brand-ink">
               Start with a conversation about your property, priorities or
               next decision.
             </p>
