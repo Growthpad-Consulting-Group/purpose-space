@@ -9,6 +9,7 @@ interface PurposeItem {
   title: string;
   description: string;
   cta: string;
+  ctaHref: string;
   image: string;
 }
 
@@ -17,24 +18,28 @@ const purposeItems: PurposeItem[] = [
     title: "A place to call home",
     description: "Explore thoughtfully selected homes to buy or rent.",
     cta: "Explore homes",
+    ctaHref: "/properties",
     image: "/images/place-to-call-home.jpg",
   },
   {
     title: "A space for business",
     description: "Find commercial spaces suited to your business needs.",
     cta: "Explore commercial spaces",
+    ctaHref: "/properties",
     image: "/images/space-for-business.jpg",
   },
   {
     title: "A property to let",
     description: "List your property with agents who understand the market.",
     cta: "List your property",
+    ctaHref: "/list-property",
     image: "/images/property-to-let.jpg",
   },
   {
     title: "A property to care for",
     description: "Reliable, hands-on management for properties you already own.",
     cta: "Property management",
+    ctaHref: "/services",
     image: "/images/property-to-care.jpg",
   },
 ];
@@ -106,7 +111,7 @@ export function PurposeAccordion() {
                         {item.description}
                       </p>
                       <Link
-                        href="#"
+                        href={item.ctaHref}
                         className="mt-6 inline-block rounded-md border border-brand-gold px-6 py-3 text-sm font-medium text-brand-green transition-colors hover:border-brand-green hover:bg-brand-green hover:text-brand-ivory"
                       >
                         {item.cta}

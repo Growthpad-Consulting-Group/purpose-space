@@ -68,3 +68,25 @@ body {
     animation: fade-scale 1s ease-out 0.15s both;
   }
 }
+
+@keyframes sidebar-zoom-out {
+  to {
+    opacity: 0;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes sidebar-zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+}
+
+::view-transition-old(list-property-sidebar) {
+  animation: 450ms ease-in both sidebar-zoom-out;
+}
+
+::view-transition-new(list-property-sidebar) {
+  animation: 450ms ease-out both sidebar-zoom-in;
+}

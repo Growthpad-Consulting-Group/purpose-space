@@ -10,7 +10,7 @@ import { navLinks } from "@/config/nav";
 
 const navItems: { label: string; href: string; isCta?: boolean }[] = [
   ...navLinks,
-  { label: "List your property", href: "#", isCta: true },
+  { label: "List your property", href: "/list-property", isCta: true },
 ];
 
 function NavLinks() {
@@ -182,7 +182,7 @@ export function Header() {
           }`}
         >
           <div
-            className={`flex items-center justify-between transition-all duration-500 ease-out ${
+            className={`flex pr-4 items-center justify-between transition-all duration-500 ease-out ${
               scrolled ? "h-16" : "h-20"
             }`}
           >
@@ -205,11 +205,17 @@ export function Header() {
               onClick={() => setMobileOpen((open) => !open)}
               className="flex h-10 w-10 items-center justify-center text-brand-green md:hidden"
             >
-              <Icon icon={mobileOpen ? "mdi:close" : "mdi:menu"} className="text-2xl" />
+              <Icon
+                icon={mobileOpen ? "mdi:close" : "mdi:menu"}
+                className="text-2xl"
+              />
             </button>
           </div>
 
-          <MobileMenu isOpen={mobileOpen} onClose={() => setMobileOpen(false)} />
+          <MobileMenu
+            isOpen={mobileOpen}
+            onClose={() => setMobileOpen(false)}
+          />
         </GlassPanel>
       </div>
     </header>

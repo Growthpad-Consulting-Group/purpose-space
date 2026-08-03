@@ -2,13 +2,17 @@ import { Icon } from "@iconify/react";
 import Image from "next/image";
 import Link from "next/link";
 
-const navigateLinks = ["Properties", "Services", "About Purpose Space"];
+const navigateLinks = [
+  { label: "Properties", href: "/properties" },
+  { label: "Services", href: "/services" },
+  { label: "About Purpose Space", href: "/about" },
+];
 
 const workWithUsLinks = [
-  "List Your Property",
-  "Property Management",
-  "Sales & Letting",
-  "Request a Valuation",
+  { label: "List Your Property", href: "/list-property" },
+  { label: "Property Management", href: "/services" },
+  { label: "Sales & Letting", href: "/services" },
+  { label: "Request a Valuation", href: "/contact" },
 ];
 
 const connectLinks = [
@@ -83,9 +87,9 @@ export function Footer() {
           </div>
 
           <FooterColumn title="Navigate">
-            {navigateLinks.map((label) => (
+            {navigateLinks.map(({ label, href }) => (
               <li key={label}>
-                <Link href="#" className="hover:text-brand-gold">
+                <Link href={href} className="hover:text-brand-gold">
                   {label}
                 </Link>
               </li>
@@ -93,9 +97,9 @@ export function Footer() {
           </FooterColumn>
 
           <FooterColumn title="Work With Us">
-            {workWithUsLinks.map((label) => (
+            {workWithUsLinks.map(({ label, href }) => (
               <li key={label}>
-                <Link href="#" className="hover:text-brand-gold">
+                <Link href={href} className="hover:text-brand-gold">
                   {label}
                 </Link>
               </li>
