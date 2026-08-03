@@ -66,6 +66,7 @@ export default function ServicesPage() {
 
       <Reveal>
         <ImageListSection
+          id="management"
           eyebrow="01 / Property Management"
           heading={
             <>
@@ -78,7 +79,7 @@ export default function ServicesPage() {
           listLabel="What we handle"
           listItems={managementItems}
           ctaLabel="Discuss management"
-          ctaHref="#"
+          ctaHref="/contact?topic=Management"
           image="/images/property-management.png"
           imageAlt="Purpose Space Realtors — managed property interior"
           imagePosition="left"
@@ -88,6 +89,7 @@ export default function ServicesPage() {
 
       <Reveal>
         <ImageListSection
+          id="sales-letting"
           eyebrow="02 / Sales & Letting"
           heading={
             <>
@@ -102,8 +104,8 @@ export default function ServicesPage() {
           listLabel="What we handle"
           listItems={salesLettingItems}
           ctaLabel="Sell or let with us"
-          ctaHref="#"
-          image="/images/sales-letting.png"
+          ctaHref="/contact?topic=Sales%20%26%20letting"
+          image="/images/sales-letting.jpg"
           imageAlt="Purpose Space Realtors — living room for sale or let"
           imagePosition="right"
           background="ivory"
@@ -112,6 +114,7 @@ export default function ServicesPage() {
 
       <Reveal>
         <ImageListSection
+          id="advisory"
           eyebrow="03 / Real Estate Advisory"
           heading={
             <>
@@ -124,7 +127,7 @@ export default function ServicesPage() {
           listLabel="What we advise on"
           listItems={advisoryItems}
           ctaLabel="Request advisory"
-          ctaHref="#"
+          ctaHref="/contact?topic=Advisory"
           image="/images/about-guides-us.png"
           imageAlt="Purpose Space Realtors — balcony view"
           imagePosition="left"
@@ -144,7 +147,7 @@ export default function ServicesPage() {
           }
           description="Tell us what you are considering—your property, priorities or next decision. We'll take it from there."
           primaryLabel="Start a conversation"
-          primaryHref="#"
+          primaryHref="/contact"
           secondaryLabel="View properties"
           secondaryHref="/properties"
         />

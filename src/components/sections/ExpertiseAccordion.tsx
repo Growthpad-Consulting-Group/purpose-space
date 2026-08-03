@@ -9,6 +9,7 @@ interface ExpertiseItem {
   title: string;
   description: string;
   cta: string;
+  ctaHref: string;
   image: string;
 }
 
@@ -18,6 +19,7 @@ const expertiseItems: ExpertiseItem[] = [
     description:
       "Considered property care that protects value, supports occupants and gives owners greater peace of mind.",
     cta: "Explore management",
+    ctaHref: "/services#management",
     image: "/images/property-management.png",
   },
   {
@@ -25,13 +27,15 @@ const expertiseItems: ExpertiseItem[] = [
     description:
       "Guided sales and letting, matching the right people to the right spaces with clarity at every step.",
     cta: "Explore sales & letting",
-    image: "/images/sales-letting.png",
+    ctaHref: "/services#sales-letting",
+    image: "/images/sales-letting.jpg",
   },
   {
     title: "Real Estate Advisory",
     description:
       "Independent advice on investment, valuation and strategy, grounded in local market understanding.",
     cta: "Explore advisory",
+    ctaHref: "/services#advisory",
     image: "/images/space-for-business.jpg",
   },
 ];
@@ -102,7 +106,7 @@ export function ExpertiseAccordion() {
                           {item.description}
                         </p>
                         <Link
-                          href="#"
+                          href={item.ctaHref}
                           className="mt-6 inline-block rounded-md border border-brand-gold px-6 py-3 text-sm font-medium text-brand-green transition-colors hover:border-brand-green hover:bg-brand-green hover:text-brand-ivory"
                         >
                           {item.cta}

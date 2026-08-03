@@ -1,7 +1,8 @@
 "use client";
 
 import { Icon } from "@iconify/react";
-import { CONTACT_TOPICS, useContactTopic } from "./contact-topic-context";
+import { useContactTopic } from "./contact-topic-context";
+import { CONTACT_TOPICS } from "./contact-topics";
 
 function Field({
   label,

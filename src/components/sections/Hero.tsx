@@ -27,7 +27,7 @@ export function Hero() {
               Explore properties
             </Link>
             <Link
-              href="#"
+              href="/contact"
               className="flex items-center gap-2 rounded-md border border-brand-gold px-6 py-3 text-sm font-medium text-brand-green transition-colors hover:bg-brand-green hover:border-brand-green hover:text-brand-ivory"
             >
               Speak to an advisor

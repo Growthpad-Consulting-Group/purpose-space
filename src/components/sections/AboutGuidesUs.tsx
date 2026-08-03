@@ -17,7 +17,7 @@ export function AboutGuidesUs() {
       listLabel="Our principles"
       listItems={principles}
       ctaLabel="Start a conversation"
-      ctaHref="#"
+      ctaHref="/contact"
       image="/images/about-guides-us.png"
       imageAlt="Purpose Space Realtors — balcony view"
       imagePosition="left"

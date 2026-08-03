@@ -130,10 +130,10 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Purpose Space Realtors
           </p>
           <div className="flex gap-6">
-            <Link href="#" className="uppercase hover:text-brand-gold">
+            <Link href="/privacy" className="uppercase hover:text-brand-gold">
               Privacy Policy
             </Link>
-            <Link href="#" className="uppercase hover:text-brand-gold">
+            <Link href="/privacy#terms" className="uppercase hover:text-brand-gold">
               Terms of Use
             </Link>
           </div>

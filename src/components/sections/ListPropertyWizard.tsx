@@ -114,8 +114,9 @@ export function ListPropertyWizard() {
 
   return (
     <section
+      id="list-property-form"
       ref={sectionRef}
-      className={`py-16 transition-colors duration-1000 lg:py-24 ${
+      className={`scroll-mt-24 py-16 transition-colors duration-1000 lg:py-24 ${
         step === 1 ? "bg-brand-ivory" : "bg-white"
       }`}
     >

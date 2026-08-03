@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 interface ImageListSectionProps {
+  id?: string;
   eyebrow: string;
   heading: ReactNode;
   description: string;
@@ -17,6 +18,7 @@ interface ImageListSectionProps {
 }
 
 export function ImageListSection({
+  id,
   eyebrow,
   heading,
   description,
@@ -100,7 +102,7 @@ export function ImageListSection({
   );
 
   return (
-    <section className={`${bgClass} py-16 lg:py-24`}>
+    <section id={id} className={`${bgClass} py-16 lg:py-24 scroll-mt-24`}>
       <div
         className={`container-fluid grid gap-12 lg:items-center ${
           imagePosition === "right"

@@ -1,7 +1,8 @@
 "use client";
 
 import { Icon } from "@iconify/react";
-import { useContactTopic, type ContactTopic } from "./contact-topic-context";
+import { useContactTopic } from "./contact-topic-context";
+import type { ContactTopic } from "./contact-topics";
 
 interface StartingPoint {
   number: string;

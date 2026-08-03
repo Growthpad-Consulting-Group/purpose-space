@@ -21,7 +21,7 @@ export function ListPropertyHero() {
           </p>
 
           <Link
-            href="#"
+            href="#list-property-form"
             className="mt-8 inline-block rounded-md border border-brand-gold px-6 py-3 text-sm font-medium text-brand-green transition-colors hover:border-brand-green hover:bg-brand-green hover:text-brand-ivory"
           >
             List your property

@@ -92,13 +92,13 @@ export function OurApproach() {
           </div>
           <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
             <Link
-              href="#"
+              href="/contact"
               className="rounded-md border border-brand-gold px-6 py-3 text-center text-sm font-medium text-brand-green transition-colors hover:border-brand-green hover:bg-brand-green hover:text-brand-ivory"
             >
               Start a conversation
             </Link>
             <Link
-              href="#"
+              href="/contact?topic=Sales%20%26%20letting"
               className="rounded-md border border-brand-gold px-6 py-3 text-center text-sm font-medium text-brand-green transition-colors hover:border-brand-green hover:bg-brand-green hover:text-brand-ivory"
             >
               Request a valuation

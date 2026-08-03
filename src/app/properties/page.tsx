@@ -94,9 +94,9 @@ export default async function PropertiesPage({
           }
           description="From valuation and preparation to marketing and viewings, we bring clarity to every step."
           primaryLabel="List your property"
-          primaryHref="#"
+          primaryHref="/list-property"
           secondaryLabel="Request a valuation"
-          secondaryHref="#"
+          secondaryHref="/contact?topic=Sales%20%26%20letting"
         />
       </Reveal>
     </>

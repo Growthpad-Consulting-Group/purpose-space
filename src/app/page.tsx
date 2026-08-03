@@ -84,7 +84,7 @@ export default async function Home() {
           primaryLabel="Explore properties"
           primaryHref="/properties"
           secondaryLabel="Start a conversation"
-          secondaryHref="#"
+          secondaryHref="/contact"
         />
       </Reveal>
     </>
