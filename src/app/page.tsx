@@ -10,9 +10,10 @@ import { ClosingCta } from "@/components/sections/ClosingCta";
 import { ListingCard } from "@/features/listings/components/ListingCard";
 import { getListings } from "@/features/listings/api/get-listings";
 import { Reveal } from "@/shared/ui/Reveal";
+import { FadeIn } from "@/shared/ui/FadeIn";
 
 export default async function Home() {
-  const listings = await getListings();
+  const listings = (await getListings()).slice(0, 3);
 
   return (
     <>
@@ -50,9 +51,9 @@ export default async function Home() {
 
         <div className="mt-16 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
           {listings.map((listing, index) => (
-            <Reveal key={listing.id} delay={index * 200}>
+            <FadeIn key={listing.id} delay={index * 200}>
               <ListingCard listing={listing} index={index} />
-            </Reveal>
+            </FadeIn>
           ))}
         </div>
       </main>
