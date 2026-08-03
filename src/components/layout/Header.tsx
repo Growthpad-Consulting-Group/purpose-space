@@ -93,7 +93,7 @@ function MobileMenu({
 
   return (
     <div
-      className={`grid transition-[grid-template-rows] duration-300 ease-out md:hidden ${
+      className={`grid transition-[grid-template-rows] duration-300 ease-out lg:hidden ${
         isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
       }`}
     >
@@ -195,7 +195,7 @@ export function Header() {
                 priority
               />
             </Link>
-            <div className="hidden md:block">
+            <div className="hidden lg:block">
               <NavLinks />
             </div>
             <button
@@ -203,7 +203,7 @@ export function Header() {
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen((open) => !open)}
-              className="flex h-10 w-10 items-center justify-center text-brand-green md:hidden"
+              className="flex h-10 w-10 items-center justify-center text-brand-green lg:hidden"
             >
               <Icon
                 icon={mobileOpen ? "mdi:close" : "mdi:menu"}
