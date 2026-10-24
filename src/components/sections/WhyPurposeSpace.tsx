@@ -16,6 +16,16 @@ const reasons: Reason[] = [
     title: "Attentive stewardship",
     description: "Thoughtful support from the first conversation onward.",
   },
+  {
+    title: "Integrity in Execution",
+    description:
+      "Clear communication, ethical practices, and full accountability in every assignment.",
+  },
+  {
+    title: "Professional Expertise",
+    description:
+      "Delivering superior service anchored on technical training, market experience, and continuous professional development.",
+  },
 ];
 
 export function WhyPurposeSpace() {

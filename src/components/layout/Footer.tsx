@@ -77,7 +77,7 @@ export function Footer() {
               />
             </Link>
             <h2 className="mt-8 font-heading text-3xl leading-tight text-brand-ivory sm:text-4xl">
-              Considered real estate guidance,
+              Purpose-led real estate guidance,
               <br />
               rooted in Kenya.
             </h2>

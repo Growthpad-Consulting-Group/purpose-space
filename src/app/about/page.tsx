@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { AboutHero } from "@/components/sections/AboutHero";
-import { AboutBelief } from "@/components/sections/AboutBelief";
-import { AboutPerspective } from "@/components/sections/AboutPerspective";
 import { AboutGuidesUs } from "@/components/sections/AboutGuidesUs";
 import { ClosingCta } from "@/components/sections/ClosingCta";
 import { Reveal } from "@/shared/ui/Reveal";
@@ -16,12 +14,6 @@ export default function AboutPage() {
   return (
     <>
       <AboutHero />
-      <Reveal>
-        <AboutBelief />
-      </Reveal>
-      <Reveal>
-        <AboutPerspective />
-      </Reveal>
       <Reveal>
         <AboutGuidesUs />
       </Reveal>
@@ -38,8 +30,11 @@ export default function AboutPage() {
           description="Tell us what you are considering—your property, priorities or next decision. We'll take it from there."
           primaryLabel="Start a conversation"
           primaryHref="/contact"
-          secondaryLabel="View properties"
-          secondaryHref="/properties"
+          additionalLinks={[
+            { label: "Property Management", href: "/services#management" },
+            { label: "Sales & Letting", href: "/services#sales-letting" },
+            { label: "Real Estate Advisory", href: "/services#advisory" },
+          ]}
         />
       </Reveal>
     </>

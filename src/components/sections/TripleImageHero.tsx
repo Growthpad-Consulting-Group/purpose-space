@@ -30,7 +30,7 @@ export function TripleImageHero({
           <h1 className="mt-6 font-heading text-5xl leading-[1.05] text-brand-green sm:text-6xl">
             {heading}
           </h1>
-          <p className="mt-8 max-w-md text-base text-brand-ink">
+          <p className="mt-8 max-w-md whitespace-pre-line text-base text-brand-ink">
             {description}
           </p>
         </div>

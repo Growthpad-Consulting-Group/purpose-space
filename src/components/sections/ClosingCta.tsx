@@ -8,8 +8,12 @@ interface ClosingCtaProps {
   description: string;
   primaryLabel: string;
   primaryHref: string;
-  secondaryLabel: string;
-  secondaryHref: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+  additionalLinks?: Array<{
+    label: string;
+    href: string;
+  }>;
 }
 
 export function ClosingCta({
@@ -20,6 +24,7 @@ export function ClosingCta({
   primaryHref,
   secondaryLabel,
   secondaryHref,
+  additionalLinks,
 }: ClosingCtaProps) {
   return (
     <section className="relative overflow-hidden bg-brand-ivory py-16 lg:py-24">
@@ -48,13 +53,29 @@ export function ClosingCta({
           >
             {primaryLabel}
           </Link>
-          <Link
-            href={secondaryHref}
-            className="flex items-center gap-2 text-sm font-medium text-brand-green hover:text-brand-gold"
-          >
-            {secondaryLabel}
-            <Icon icon="mdi:arrow-right" className="text-base" />
-          </Link>
+          {secondaryLabel && secondaryHref ? (
+            <Link
+              href={secondaryHref}
+              className="flex items-center gap-2 text-sm font-medium text-brand-green hover:text-brand-gold"
+            >
+              {secondaryLabel}
+              <Icon icon="mdi:arrow-right" className="text-base" />
+            </Link>
+          ) : null}
+          {additionalLinks ? (
+            <div className="flex flex-col items-start gap-4">
+              {additionalLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="flex items-center gap-2 text-left text-sm font-medium text-brand-green hover:text-brand-gold"
+                >
+                  {link.label}
+                  <Icon icon="mdi:arrow-right" className="text-base" />
+                </Link>
+              ))}
+            </div>
+          ) : null}
         </div>
       </div>
     </section>

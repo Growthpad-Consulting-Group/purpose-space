@@ -37,8 +37,8 @@ export function OurApproach() {
             forward.
           </h2>
           <p className="max-w-md text-base text-brand-ink lg:justify-self-end">
-            Every engagement begins with understanding what matters—to you,
-            your property and the outcome you want.
+            Every engagement begins with understanding what matters—decisions
+            are aligned with client objectives and long-term value creation.
           </p>
         </div>
 
@@ -98,10 +98,10 @@ export function OurApproach() {
               Start a conversation
             </Link>
             <Link
-              href="/contact?topic=Sales%20%26%20letting"
+              href="/properties"
               className="rounded-md border border-brand-gold px-6 py-3 text-center text-sm font-medium text-brand-green transition-colors hover:border-brand-green hover:bg-brand-green hover:text-brand-ivory"
             >
-              Request a valuation
+              View properties
             </Link>
           </div>
         </div>

@@ -92,7 +92,7 @@ export default async function PropertiesPage({
               considered.
             </>
           }
-          description="From valuation and preparation to marketing and viewings, we bring clarity to every step."
+          description="Superior service anchored on technical training, market experience, and continuous professional development."
           primaryLabel="List your property"
           primaryHref="/list-property"
           secondaryLabel="Request a valuation"

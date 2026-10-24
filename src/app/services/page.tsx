@@ -29,21 +29,26 @@ const items = [
 ];
 
 const managementItems = [
-  "Occupancy and tenant coordination",
-  "Maintenance and service oversight",
-  "Reporting and owner communication",
+  "Lease administration and contract management",
+  "Rent collection, service charge administration and financial reporting",
+  "Liaison and tenant coordination",
+  "Physical management including maintenance and service oversight",
+  "Health & safety and statutory compliance",
 ];
 
 const salesLettingItems = [
-  "Valuation and market positioning",
-  "Marketing, viewings and enquiries",
-  "Negotiation, documentation and handover",
+  "Market rent or price advisory",
+  "Property marketing for leasing or sale",
+  "Handling inquiries, viewings, due diligence & correspondence",
+  "Negotiation, documentation, payments and handover",
+  "Property purchase assistance",
 ];
 
 const advisoryItems = [
-  "Property valuation and opportunity review",
-  "Acquisition and disposal guidance",
-  "Portfolio and investment decisions",
+  "Property acquisition and disposal guidance",
+  "Development advisory",
+  "Portfolio strategy and optimisation",
+  "Market and sector research",
 ];
 
 export default function ServicesPage() {

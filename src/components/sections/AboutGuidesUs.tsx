@@ -1,11 +1,16 @@
 import { ImageListSection } from "@/components/sections/ImageListSection";
 
-const principles = ["Purpose-led advice", "Local understanding", "Attentive stewardship"];
+const principles = [
+  "Purpose-led advice",
+  "Professional Excellence & Integrity",
+  "Client-Centricity",
+  "Innovation",
+];
 
 export function AboutGuidesUs() {
   return (
     <ImageListSection
-      eyebrow="03 / What guides us"
+      eyebrow="01 / What guides us"
       heading={
         <>
           Composed. Warm.

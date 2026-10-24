@@ -9,7 +9,7 @@ export function Manifesto() {
             Purpose before property
           </p>
           <h2 className="mt-6 font-heading text-4xl leading-[1.15] text-brand-ivory sm:text-5xl">
-            We begin with your life.
+            We begin with your desire.
             <br />
             Property follows with purpose.
           </h2>

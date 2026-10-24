@@ -29,7 +29,7 @@ const purposeItems: PurposeItem[] = [
     image: "/images/space-for-business.jpg",
   },
   {
-    title: "A property to let",
+    title: "A property to let or sell",
     description: "List your property with agents who understand the market.",
     cta: "List your property",
     ctaHref: "/list-property",

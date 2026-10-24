@@ -25,7 +25,9 @@ export function AboutHero() {
           people.
         </>
       }
-      description="Purpose Space exists to make real estate feel considered rather than transactional. Across homes, workplaces and investments, we guide decisions that fit lives, ambitions and long-term goals."
+      description={
+        "We are a professional real estate services firm delivering purpose-led solutions across property management, agency, and property advisory. Our approach is anchored in the belief that every property decision must be intentional, strategic, and supported by strong professional insight. Through this perspective, we help clients unlock value, manage risk, and build resilient property portfolios in a fast-evolving market.\n\nPurpose-Led Real Estate Solutions is more than a tagline—it is the foundation of how we operate, the standard we uphold, and the value we bring to every engagement. We embrace innovation, transparent communication, and disciplined execution as key drivers of our service culture."
+      }
       items={images}
     />
   );
