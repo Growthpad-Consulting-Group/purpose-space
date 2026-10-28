@@ -16,13 +16,9 @@ export function AboutHero() {
       eyebrow="About Purpose Space"
       heading={
         <>
-          Real estate,
+          Purpose-led,
           <br />
-          considered
-          <br />
-          around
-          <br />
-          people.
+          real-estate.
         </>
       }
       description={

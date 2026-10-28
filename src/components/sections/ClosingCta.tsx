@@ -10,6 +10,7 @@ interface ClosingCtaProps {
   primaryHref: string;
   secondaryLabel?: string;
   secondaryHref?: string;
+  additionalLinksLabel?: string;
   additionalLinks?: Array<{
     label: string;
     href: string;
@@ -24,6 +25,7 @@ export function ClosingCta({
   primaryHref,
   secondaryLabel,
   secondaryHref,
+  additionalLinksLabel,
   additionalLinks,
 }: ClosingCtaProps) {
   return (
@@ -44,6 +46,27 @@ export function ClosingCta({
           <p className="mt-6 max-w-2xl text-base text-brand-ink">
             {description}
           </p>
+          {additionalLinks ? (
+            <div className="mt-12">
+              {additionalLinksLabel ? (
+                <p className="text-xs font-semibold tracking-widest text-brand-gold uppercase">
+                  {additionalLinksLabel}
+                </p>
+              ) : null}
+              <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-x-10">
+                {additionalLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="flex items-center gap-2 font-heading text-xl text-brand-green hover:text-brand-gold"
+                  >
+                    {link.label}
+                    <Icon icon="mdi:arrow-top-right" className="text-base" />
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ) : null}
         </div>
 
         <div className="flex flex-col items-center gap-4 sm:items-start lg:items-center">
@@ -61,20 +84,6 @@ export function ClosingCta({
               {secondaryLabel}
               <Icon icon="mdi:arrow-right" className="text-base" />
             </Link>
-          ) : null}
-          {additionalLinks ? (
-            <div className="flex flex-col items-start gap-4">
-              {additionalLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="flex items-center gap-2 text-left text-sm font-medium text-brand-green hover:text-brand-gold"
-                >
-                  {link.label}
-                  <Icon icon="mdi:arrow-right" className="text-base" />
-                </Link>
-              ))}
-            </div>
           ) : null}
         </div>
       </div>

@@ -30,6 +30,9 @@ export default function AboutPage() {
           description="Tell us what you are considering—your property, priorities or next decision. We'll take it from there."
           primaryLabel="Start a conversation"
           primaryHref="/contact"
+          secondaryLabel="View properties"
+          secondaryHref="/properties"
+          additionalLinksLabel="Explore our services"
           additionalLinks={[
             { label: "Property Management", href: "/services#management" },
             { label: "Sales & Letting", href: "/services#sales-letting" },
