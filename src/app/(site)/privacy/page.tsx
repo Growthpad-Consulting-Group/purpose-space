@@ -85,7 +85,7 @@ export default function PrivacyPage() {
             <p>We use the information collected to:</p>
             <ul className="list-disc space-y-2 pl-5">
               <li>
-                Respond to enquiries and arrange viewings, valuations or
+                Respond to enquiries and arrange viewings or
                 consultations.
               </li>
               <li>

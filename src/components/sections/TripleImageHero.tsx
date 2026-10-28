@@ -1,10 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { ReactNode } from "react";
 
 export interface TripleImageHeroItem {
   number: string;
   label: string;
   image: string;
+  href?: string;
 }
 
 interface TripleImageHeroProps {
@@ -36,8 +38,9 @@ export function TripleImageHero({
         </div>
 
         <div className="animate-hero-image flex h-150 gap-6 border-l border-brand-gold/50 pl-8">
-          {items.map((item) => (
-            <div key={item.label} className="group flex h-full flex-1 flex-col">
+          {items.map((item) => {
+            const card = (
+              <div className="group flex h-full flex-1 flex-col">
               <div className="relative w-full flex-1 overflow-hidden rounded-t-full transition-transform duration-500 ease-out group-hover:-translate-y-2">
                 <Image
                   src={item.image}
@@ -49,8 +52,24 @@ export function TripleImageHero({
               <p className="mt-4 text-xs font-semibold tracking-widest text-brand-green uppercase">
                 {item.number} / {item.label}
               </p>
-            </div>
-          ))}
+              </div>
+            );
+
+            return item.href ? (
+              <Link
+                key={item.label}
+                href={item.href}
+                aria-label={`Explore ${item.label}`}
+                className="flex h-full flex-1 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-gold"
+              >
+                {card}
+              </Link>
+            ) : (
+              <div key={item.label} className="flex h-full flex-1">
+                {card}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

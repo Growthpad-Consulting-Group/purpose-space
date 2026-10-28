@@ -1,5 +1,6 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
 
 export function ListPropertyHero() {
   return (
@@ -20,12 +21,22 @@ export function ListPropertyHero() {
             management.
           </p>
 
-          <Link
-            href="#list-property-form"
+          <button
+            type="button"
+            onClick={() => {
+              document
+                .getElementById("list-property-form")
+                ?.scrollIntoView({ behavior: "smooth", block: "start" });
+              window.history.replaceState(
+                null,
+                "",
+                `${window.location.pathname}${window.location.search}#list-property-form`,
+              );
+            }}
             className="mt-8 inline-block rounded-md border border-brand-gold px-6 py-3 text-sm font-medium text-brand-green transition-colors hover:border-brand-green hover:bg-brand-green hover:text-brand-ivory"
           >
             List your property
-          </Link>
+          </button>
         </div>
 
         <div className="relative aspect-3/3">

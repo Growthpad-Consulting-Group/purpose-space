@@ -12,7 +12,7 @@ const workWithUsLinks = [
   { label: "List Your Property", href: "/list-property" },
   { label: "Property Management", href: "/services" },
   { label: "Sales & Letting", href: "/services" },
-  { label: "Request a Valuation", href: "/contact" },
+  { label: "View Properties", href: "/properties" },
 ];
 
 const connectLinks = [

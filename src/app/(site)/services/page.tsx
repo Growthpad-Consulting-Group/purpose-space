@@ -15,16 +15,19 @@ const items = [
     number: "01",
     label: "Property Management",
     image: "/images/about-purpose.png",
+    href: "#management",
   },
   {
     number: "02",
     label: "Sales & Letting",
     image: "/images/about-place.png",
+    href: "#sales-letting",
   },
   {
     number: "03",
     label: "Advisory",
     image: "/images/about-possibility.png",
+    href: "#advisory",
   },
 ];
 

@@ -1,95 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
 import type { Listing } from "@/features/listings/types/listing";
-
-function Lightbox({
-  images,
-  index,
-  onClose,
-  onNavigate,
-}: {
-  images: string[];
-  index: number;
-  onClose: () => void;
-  onNavigate: (index: number) => void;
-}) {
-  useEffect(() => {
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") onClose();
-      if (event.key === "ArrowRight") onNavigate((index + 1) % images.length);
-      if (event.key === "ArrowLeft")
-        onNavigate((index - 1 + images.length) % images.length);
-    };
-
-    document.body.style.overflow = "hidden";
-    window.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", onKeyDown);
-    };
-  }, [index, images.length, onClose, onNavigate]);
-
-  return (
-    <div
-      role="dialog"
-      aria-modal
-      onClick={onClose}
-      className="fixed inset-0 z-100 flex items-center justify-center bg-brand-ink/90 p-4 sm:p-10"
-    >
-      <button
-        type="button"
-        aria-label="Close"
-        onClick={onClose}
-        className="absolute top-4 right-4 flex h-10 w-10 items-center justify-center text-brand-ivory transition-colors hover:text-brand-gold sm:top-6 sm:right-6"
-      >
-        <Icon icon="mdi:close" className="text-3xl" />
-      </button>
-
-      {images.length > 1 && (
-        <>
-          <button
-            type="button"
-            aria-label="Previous image"
-            onClick={(event) => {
-              event.stopPropagation();
-              onNavigate((index - 1 + images.length) % images.length);
-            }}
-            className="absolute left-2 flex h-12 w-12 items-center justify-center text-brand-ivory transition-colors hover:text-brand-gold sm:left-6"
-          >
-            <Icon icon="mdi:chevron-left" className="text-4xl" />
-          </button>
-          <button
-            type="button"
-            aria-label="Next image"
-            onClick={(event) => {
-              event.stopPropagation();
-              onNavigate((index + 1) % images.length);
-            }}
-            className="absolute right-2 flex h-12 w-12 items-center justify-center text-brand-ivory transition-colors hover:text-brand-gold sm:right-6"
-          >
-            <Icon icon="mdi:chevron-right" className="text-4xl" />
-          </button>
-        </>
-      )}
-
-      <div
-        onClick={(event) => event.stopPropagation()}
-        className="relative h-full max-h-[80vh] w-full max-w-4xl"
-      >
-        <Image
-          src={images[index]}
-          alt=""
-          fill
-          sizes="90vw"
-          className="object-contain"
-        />
-      </div>
-    </div>
-  );
-}
+import { Modal } from "@/shared/ui/Modal";
 
 export function PropertyGallery({ listing }: { listing: Listing }) {
   const images = listing.gallery?.length
@@ -101,7 +16,28 @@ export function PropertyGallery({ listing }: { listing: Listing }) {
       ];
 
   const [main, ...rest] = images;
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState(0);
+  const [galleryOpen, setGalleryOpen] = useState(false);
+  const hasMultipleImages = images.length > 1;
+
+  const closeGallery = useCallback(() => setGalleryOpen(false), []);
+
+  const openGallery = (index: number) => {
+    setOpenIndex(index);
+    setGalleryOpen(true);
+  };
+
+  const showPrevious = useCallback(() => {
+    setOpenIndex((current) =>
+      (current - 1 + images.length) % images.length,
+    );
+  }, [images.length]);
+
+  const showNext = useCallback(() => {
+    setOpenIndex((current) =>
+      (current + 1) % images.length,
+    );
+  }, [images.length]);
 
   return (
     <section className="bg-white pb-16 lg:pb-24">
@@ -114,10 +50,14 @@ export function PropertyGallery({ listing }: { listing: Listing }) {
         </h2>
         <div className="mt-8 border-t border-brand-gold" />
 
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-[1.4fr_1fr]">
+        <div
+          className={`mt-10 grid grid-cols-1 gap-4 ${
+            rest.length > 0 ? "sm:grid-cols-[1.4fr_1fr]" : ""
+          }`}
+        >
           <button
             type="button"
-            onClick={() => setOpenIndex(0)}
+            onClick={() => openGallery(0)}
             className="group relative aspect-4/3 overflow-hidden rounded-sm"
           >
             <Image
@@ -127,36 +67,95 @@ export function PropertyGallery({ listing }: { listing: Listing }) {
               sizes="(min-width: 640px) 50vw, 100vw"
               className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
             />
+            <span className="absolute right-4 bottom-4 flex items-center gap-2 rounded-full border border-white/25 bg-brand-ink/65 px-4 py-2 text-xs font-semibold tracking-wider text-white uppercase backdrop-blur-md transition-colors group-hover:bg-brand-green">
+              <Icon icon="mdi:fullscreen" className="text-lg" />
+              View gallery
+            </span>
           </button>
-          <div className="grid grid-rows-2 gap-4 max-sm:aspect-4/3">
-            {rest.slice(0, 2).map((image, index) => (
-              <button
-                key={image + index}
-                type="button"
-                onClick={() => setOpenIndex(index + 1)}
-                className="group relative overflow-hidden rounded-sm"
-              >
-                <Image
-                  src={image}
-                  alt={listing.title}
-                  fill
-                  sizes="(min-width: 640px) 25vw, 100vw"
-                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                />
-              </button>
-            ))}
-          </div>
+          {rest.length > 0 ? (
+            <div className="grid grid-rows-2 gap-4 max-sm:aspect-4/3">
+              {rest.slice(0, 2).map((image, index) => (
+                <button
+                  key={image + index}
+                  type="button"
+                  onClick={() => openGallery(index + 1)}
+                  className="group relative overflow-hidden rounded-sm"
+                >
+                  <Image
+                    src={image}
+                    alt={`${listing.title} — image ${index + 2}`}
+                    fill
+                    sizes="(min-width: 640px) 25vw, 100vw"
+                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                  />
+                  {index === 1 && images.length > 3 ? (
+                    <span className="absolute inset-0 flex items-center justify-center bg-brand-ink/45 font-heading text-3xl text-white backdrop-blur-[1px] transition-colors group-hover:bg-brand-ink/60">
+                      +{images.length - 3}
+                    </span>
+                  ) : null}
+                </button>
+              ))}
+            </div>
+          ) : null}
         </div>
       </div>
 
-      {openIndex !== null && (
-        <Lightbox
-          images={images}
-          index={openIndex}
-          onClose={() => setOpenIndex(null)}
-          onNavigate={setOpenIndex}
-        />
-      )}
+      <Modal
+          open={galleryOpen}
+          title={`${listing.title} gallery`}
+          onClose={closeGallery}
+          onPrevious={hasMultipleImages ? showPrevious : undefined}
+          onNext={hasMultipleImages ? showNext : undefined}
+        >
+          <div className="relative h-full w-full">
+            <div className="absolute top-5 left-5 z-10 max-w-[calc(100%-7rem)] rounded-full border border-white/15 bg-black/20 px-4 py-2 text-sm text-white backdrop-blur-md sm:top-6 sm:left-6">
+              <span className="font-medium">{listing.title}</span>
+              <span className="mx-2 text-brand-gold">/</span>
+              <span className="text-white/70">
+                {openIndex + 1} of {images.length}
+              </span>
+            </div>
+
+            <Image
+              key={images[openIndex]}
+              src={images[openIndex]}
+              alt={`${listing.title} — image ${openIndex + 1}`}
+              fill
+              priority
+              sizes="100vw"
+              className="object-contain px-3 py-20 sm:px-20 sm:py-16"
+            />
+
+            {hasMultipleImages ? (
+              <div className="absolute right-0 bottom-0 left-0 z-10 flex justify-center bg-linear-to-t from-black/70 to-transparent px-4 pt-10 pb-4 sm:pb-6">
+                <div className="flex max-w-full gap-2 overflow-x-auto rounded-xl border border-white/15 bg-black/25 p-2 backdrop-blur-md">
+                  {images.map((image, index) => (
+                    <button
+                      key={image + index}
+                      type="button"
+                      onClick={() => setOpenIndex(index)}
+                      aria-label={`View image ${index + 1}`}
+                      aria-current={index === openIndex ? "true" : undefined}
+                      className={`relative h-12 w-16 shrink-0 overflow-hidden rounded-md border transition-colors sm:h-14 sm:w-20 ${
+                        index === openIndex
+                          ? "border-brand-gold"
+                          : "border-transparent opacity-60 hover:opacity-100"
+                      }`}
+                    >
+                      <Image
+                        src={image}
+                        alt=""
+                        fill
+                        sizes="80px"
+                        className="object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ) : null}
+          </div>
+        </Modal>
     </section>
   );
 }

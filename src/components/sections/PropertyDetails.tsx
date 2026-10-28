@@ -1,5 +1,10 @@
-import Link from "next/link";
+"use client";
+
 import type { Listing } from "@/features/listings/types/listing";
+import {
+  PROPERTY_ENQUIRY_EVENT,
+  type PropertyEnquiryEventDetail,
+} from "./property-enquiry-event";
 
 const FALLBACK_ROWS = (listing: Listing) => [
   { label: "Property type", value: listing.category },
@@ -15,6 +20,21 @@ export function PropertyDetails({ listing }: { listing: Listing }) {
   const rows = listing.detailRows?.length
     ? listing.detailRows
     : FALLBACK_ROWS(listing);
+
+  const askAboutLocation = () => {
+    const detail: PropertyEnquiryEventDetail = {
+      message: `I\u2019d like more information about the location of ${listing.title}.`,
+    };
+    window.dispatchEvent(new CustomEvent(PROPERTY_ENQUIRY_EVENT, { detail }));
+    document
+      .getElementById("property-enquiry")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.history.replaceState(
+      null,
+      "",
+      `${window.location.pathname}${window.location.search}#property-enquiry`,
+    );
+  };
 
   return (
     <section className="bg-brand-ivory py-16 lg:py-24">
@@ -97,12 +117,13 @@ export function PropertyDetails({ listing }: { listing: Listing }) {
                 {listing.locationNote}
               </p>
             )}
-            <Link
-              href="/contact"
+            <button
+              type="button"
+              onClick={askAboutLocation}
               className="mt-6 inline-block rounded-md border border-brand-gold px-6 py-3 text-sm font-medium text-brand-ivory transition-colors hover:bg-brand-gold hover:text-brand-green"
             >
               Ask about the location
-            </Link>
+            </button>
           </div>
         </div>
       </div>

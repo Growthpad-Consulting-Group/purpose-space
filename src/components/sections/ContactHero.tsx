@@ -21,7 +21,7 @@ const startingPoints: StartingPoint[] = [
   {
     number: "02",
     title: "List a property",
-    description: "Begin with valuation, preparation and a considered route to market.",
+    description: "Begin with preparation, marketing and a considered route to market.",
     topic: "Sales & letting",
   },
   {

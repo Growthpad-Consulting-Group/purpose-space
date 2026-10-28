@@ -33,7 +33,7 @@ const expertiseItems: ExpertiseItem[] = [
   {
     title: "Real Estate Advisory",
     description:
-      "Independent advice on investment, valuation and strategy, grounded in local market understanding.",
+      "Independent advice on investment, acquisition and strategy, grounded in local market understanding.",
     cta: "Explore advisory",
     ctaHref: "/services#advisory",
     image: "/images/space-for-business.jpg",

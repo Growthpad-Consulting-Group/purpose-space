@@ -1,6 +1,11 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import type { Listing } from "@/features/listings/types/listing";
+import {
+  PROPERTY_ENQUIRY_EVENT,
+  type PropertyEnquiryEventDetail,
+} from "./property-enquiry-event";
 
 function Field({
   label,
@@ -27,9 +32,23 @@ function Field({
 
 export function PropertyEnquiry({ listing }: { listing: Listing }) {
   const isCommercial = listing.category === "Commercial";
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    const handleEnquiryContext = (event: Event) => {
+      const { detail } = event as CustomEvent<PropertyEnquiryEventDetail>;
+      setMessage(detail.message);
+      window.setTimeout(() => {
+        document.getElementById("property-enquiry-message")?.focus();
+      }, 500);
+    };
+    window.addEventListener(PROPERTY_ENQUIRY_EVENT, handleEnquiryContext);
+    return () =>
+      window.removeEventListener(PROPERTY_ENQUIRY_EVENT, handleEnquiryContext);
+  }, []);
 
   return (
-    <section className="bg-white py-16">
+    <section id="property-enquiry" className="scroll-mt-24 bg-white py-16">
       <div className="container-fluid grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
         <div>
           <p className="text-xs font-semibold tracking-widest text-brand-green uppercase">
@@ -70,6 +89,20 @@ export function PropertyEnquiry({ listing }: { listing: Listing }) {
               type="email"
             />
           </div>
+
+          <label className="mt-8 block">
+            <span className="text-xs font-semibold tracking-widest text-brand-green uppercase">
+              Your enquiry
+            </span>
+            <textarea
+              id="property-enquiry-message"
+              rows={3}
+              value={message}
+              onChange={(event) => setMessage(event.target.value)}
+              placeholder={`Tell us what you would like to know about ${listing.title}.`}
+              className="mt-3 w-full resize-none border-b border-brand-gold/60 bg-transparent pb-3 text-base text-brand-green placeholder-brand-ink/50 outline-none transition-colors focus:border-brand-green"
+            />
+          </label>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <button
