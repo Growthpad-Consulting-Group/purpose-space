@@ -11,7 +11,7 @@ export function PropertyOverview({ listing }: { listing: Listing }) {
           <p className="text-xs font-semibold tracking-widest text-brand-green uppercase">
             {listing.tagline ?? `${listing.status} · ${listing.location}`}
           </p>
-          <h2 className="mt-6 font-heading text-3xl leading-[1.15] text-brand-green sm:text-4xl">
+          <h2 className="mt-6 font-heading text-md leading-normal text-brand-green ">
             {listing.overviewHeading ?? listing.description}
           </h2>
         </div>

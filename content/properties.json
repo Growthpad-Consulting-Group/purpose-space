@@ -1,0 +1,366 @@
+[
+  {
+    "title": "Sameer Business Park",
+    "slug": "sameer-business-park",
+    "category": "Commercial",
+    "status": "To Let",
+    "location": "Mombasa Road, Nairobi",
+    "priceDisplay": "From KES 80 per sq. ft. per month",
+    "specs": ["Showrooms from 3,100 sq. ft.", "Offices from 1,500 sq. ft."],
+    "description": "Sameer Business Park is a modern transformative experience of corporate offices cum showrooms complex set on 8.8 acres along Mombasa Road, Nairobi. It is accessible from both Mombasa Road and Enterprise Road.\n\nDesigned for maximum flexibility, it has five blocks with well-finished lobbies and public spaces, separate entrances for office and showroom space, a coffee lounge and restaurant, a food court, ample surface and underground secured parking and separate loading bays.\n\nAll units have private washrooms, tea rooms and high-speed lifts. The flexible internal layout will suit any occupier including top-end retail showrooms, offices, BPO and Call Centres with multiple fibre optic connection options.",
+    "detailRows": [
+      { "_key": "type", "label": "Property type", "value": "Offices and showrooms" },
+      { "_key": "showroom-size", "label": "Showrooms", "value": "From 3,100 sq. ft." },
+      { "_key": "office-size", "label": "Offices", "value": "From 1,500 sq. ft." },
+      { "_key": "showroom-rent", "label": "Showroom rent", "value": "KES 110 p.s.f. p.m." },
+      { "_key": "office-rent", "label": "Office rent", "value": "KES 80 p.s.f. p.m." },
+      { "_key": "service-charge", "label": "Service charge", "value": "KES 17 p.s.f. p.m." },
+      { "_key": "parking", "label": "Parking", "value": "KES 5,000" }
+    ],
+    "detailsFootnote": "Rates exclude VAT.",
+    "imageFolder": "Sameer Business Park",
+    "sortOrder": 1
+  },
+  {
+    "title": "The Mandrake",
+    "slug": "the-mandrake",
+    "category": "Commercial",
+    "status": "To Let",
+    "location": "Westlands, Nairobi",
+    "priceDisplay": "USD 1.30 per sq. ft. per month",
+    "specs": ["Grade-A offices", "Office space of 2,500 sq. ft.", "Restaurant space of 13,309 sq. ft."],
+    "description": "This is a landmark Grade-A office building in Westlands situated at Vale Close, off Ring Road Parklands; it comprises 11 floors of office spaces and 5 floors of parking.\n\nThis is a Green Building that has won several awards, including Best Office Development 2024–2025 by African Property Awards Development.\n\nIt provides a thriving community for trailblazers that nurtures creativity, collaboration, and success. With accessible green spaces for occupants to use, it ensures a sense of wellness and holistic design to propel a new era of inspired work.",
+    "detailRows": [
+      { "_key": "type", "label": "Property type", "value": "Grade-A office building" },
+      { "_key": "floors", "label": "Office floors", "value": "11" },
+      { "_key": "office-space", "label": "Office space", "value": "2,500 sq. ft." },
+      { "_key": "restaurant-space", "label": "Restaurant space", "value": "13,309 sq. ft." },
+      { "_key": "rent", "label": "Rent", "value": "USD 1.30 p.s.f. p.m." },
+      { "_key": "service-charge", "label": "Service charge", "value": "USD 0.20 p.s.f. p.m." },
+      { "_key": "parking", "label": "Parking", "value": "USD 100 each" }
+    ],
+    "detailsFootnote": "Rates exclude VAT.",
+    "imageFolder": "The Mandrake",
+    "sortOrder": 2
+  },
+  {
+    "title": "Rivaan Centre",
+    "slug": "rivaan-centre",
+    "category": "Commercial",
+    "status": "To Let",
+    "location": "Muguga Green, Westlands",
+    "priceDisplay": "KES 110 per sq. ft. per month",
+    "specs": ["Offices from 2,700 sq. ft.", "6-storey office building"],
+    "description": "A modern office building situated at a convenient location in Westlands, Muguga Green/Brookside area.\n\nThe 6-storey building offers high-quality office accommodation designed to international standards to offer occupiers a secure, highly efficient and flexible working environment.",
+    "detailRows": [
+      { "_key": "type", "label": "Property type", "value": "Office building" },
+      { "_key": "office-space", "label": "Office space", "value": "From 2,700 sq. ft." },
+      { "_key": "rent", "label": "Rent", "value": "KES 110 p.s.f. p.m." },
+      { "_key": "service-charge", "label": "Service charge", "value": "KES 29 p.s.f. p.m." },
+      { "_key": "parking", "label": "Parking", "value": "KES 10,000 each" }
+    ],
+    "detailsFootnote": "Rates exclude VAT.",
+    "imageFolder": "Rivaan",
+    "sortOrder": 3
+  },
+  {
+    "title": "874 James Gichuru",
+    "slug": "874-james-gichuru",
+    "category": "Commercial",
+    "status": "To Let",
+    "location": "James Gichuru Road, Nairobi",
+    "priceDisplay": "From USD 1.20 per sq. ft. per month",
+    "specs": ["Office and retail space", "Contemporary commercial address"],
+    "description": "874 is a contemporary commercial address designed for forward-thinking businesses.\n\nLocated along James Gichuru Road, it combines bold architecture with purposeful design to create an environment that reflects ambition and excellence. Every line, surface, and material has been considered to support productivity while maintaining a quiet sense of distinction, a place where work, design, and identity align.\n\nEach space supports efficiency, comfort, and sophistication, creating an environment where performance and design coexist seamlessly. Managed with professionalism and attention to detail, 874 redefines what it means to work in excellence.",
+    "detailRows": [
+      { "_key": "type", "label": "Property type", "value": "Offices and retail" },
+      { "_key": "office-rent", "label": "Office rent", "value": "USD 1.20 p.s.f. p.m." },
+      { "_key": "retail-rent", "label": "Retail rent", "value": "USD 2 p.s.f. p.m." },
+      { "_key": "service-charge", "label": "Service charge", "value": "KES 25 p.s.f. p.m." },
+      { "_key": "parking", "label": "Parking", "value": "USD 100 per slot" }
+    ],
+    "detailsFootnote": "Rates exclude VAT.",
+    "imageFolder": "874 James Gichuru",
+    "sortOrder": 4
+  },
+  {
+    "title": "Parklands Office Suites",
+    "slug": "parklands-office-suites",
+    "category": "Commercial",
+    "status": "To Let",
+    "location": "Parklands Road, Nairobi",
+    "priceDisplay": "KES 90 per sq. ft. per month",
+    "specs": ["2,200 sq. ft.", "2 parking slots"],
+    "description": "Office building situated along Parklands Road near the University of Nairobi School of Law.",
+    "detailRows": [
+      { "_key": "type", "label": "Property type", "value": "Office building" },
+      { "_key": "office-space", "label": "Office space", "value": "2,200 sq. ft." },
+      { "_key": "parking-allocation", "label": "Parking allocation", "value": "2 slots" },
+      { "_key": "rent", "label": "Rent", "value": "KES 90 p.s.f. p.m." },
+      { "_key": "service-charge", "label": "Service charge", "value": "KES 65,000 p.m." },
+      { "_key": "parking", "label": "Parking", "value": "KES 10,000 each" }
+    ],
+    "detailsFootnote": "Rates exclude VAT.",
+    "imageFolder": "Parklands Office Suites",
+    "sortOrder": 5
+  },
+  {
+    "title": "Elgon Place",
+    "slug": "elgon-place",
+    "category": "Commercial",
+    "status": "To Let",
+    "location": "Upper Hill, Nairobi",
+    "priceDisplay": "KES 110 per sq. ft. per month",
+    "specs": ["7 floors", "Flexible open-plan offices"],
+    "description": "This is a well-positioned office building located in the heart of Upper Hill, one of Nairobi’s most established districts associated with financial and insurance headquarters, as well as medical services. It was designed to support modern office setups, offering a professional environment ideal for corporates, NGOs, consultancies, medical practitioners, and growing enterprises seeking a strategic address.\n\nThe property is very accessible from several directions, including CBD, Mombasa Road, Langata Road, Ngong Road and Milimani, thereby allowing convenient connections and proximity to key institutions, hotels, financial hubs, and government offices.\n\nElgon Place combines architectural functionalism with modern workspace design. Spanning 7 floors, it offers open-plan floor plates designed for versatile space planning, whether tailored for individual private offices, high-density corporate team spaces, or vibrant executive suites.",
+    "detailRows": [
+      { "_key": "type", "label": "Property type", "value": "Office building" },
+      { "_key": "floors", "label": "Floors", "value": "7" },
+      { "_key": "rent", "label": "Rent", "value": "KES 110 p.s.f. p.m." },
+      { "_key": "service-charge", "label": "Service charge", "value": "KES 25 p.s.f. p.m." },
+      { "_key": "parking", "label": "Parking", "value": "KES 10,000 each" }
+    ],
+    "detailsFootnote": "Rates exclude VAT.",
+    "imageFolder": "Elgon",
+    "sortOrder": 6
+  },
+  {
+    "title": "Peponi Plaza",
+    "slug": "peponi-plaza",
+    "category": "Commercial",
+    "status": "To Let",
+    "location": "Mwanzi Road, Westlands",
+    "priceDisplay": "KES 100 per sq. ft. per month",
+    "specs": ["2,500 sq. ft.", "2 parking slots"],
+    "description": "This is a well-established office building in the Peponi/Westgate area of Westlands, situated along Mwanzi Road.",
+    "detailRows": [
+      { "_key": "type", "label": "Property type", "value": "Office building" },
+      { "_key": "office-space", "label": "Office space", "value": "2,500 sq. ft." },
+      { "_key": "parking-allocation", "label": "Included parking", "value": "2 slots" },
+      { "_key": "rent", "label": "Rent", "value": "KES 100 p.s.f. p.m." },
+      { "_key": "service-charge", "label": "Service charge", "value": "KES 25,000 p.m." },
+      { "_key": "parking", "label": "Additional parking", "value": "KES 10,000 each" }
+    ],
+    "detailsFootnote": "Rates exclude VAT.",
+    "imageFolder": "Peponi Plaza",
+    "sortOrder": 7
+  },
+  {
+    "title": "The Riverfront",
+    "slug": "the-riverfront",
+    "category": "Commercial",
+    "status": "To Let",
+    "location": "Riverside Drive, Nairobi",
+    "priceDisplay": "KES 100 per sq. ft. per month",
+    "specs": ["3,200 and 3,245 sq. ft.", "Premier office development"],
+    "description": "This is a premier office development strategically located off Riverside Drive near the Chiromo Road junction. Combining serene, green surroundings with rapid connectivity to Westlands and the Nairobi CBD, The Riverfront offers high-grade corporate workspaces designed for multinationals, tech leaders, financial institutions, and established professional firms.\n\nIt offers open-plan floor plates designed for versatile space planning that are easily customizable for executive suites, partitioned private offices, boardrooms, or expansive collaborative layouts.",
+    "detailRows": [
+      { "_key": "type", "label": "Property type", "value": "Office development" },
+      { "_key": "office-space", "label": "Office space", "value": "3,200 and 3,245 sq. ft." },
+      { "_key": "rent", "label": "Rent", "value": "KES 100 p.s.f. p.m." },
+      { "_key": "service-charge", "label": "Service charge", "value": "KES 29 p.s.f. p.m." },
+      { "_key": "parking", "label": "Parking", "value": "KES 10,000 each" }
+    ],
+    "detailsFootnote": "Rates exclude VAT.",
+    "imageFolder": "The Riverfront",
+    "sortOrder": 8
+  },
+  {
+    "title": "Fidelity Insurance Centre",
+    "slug": "fidelity-insurance-centre",
+    "category": "Commercial",
+    "status": "To Let",
+    "location": "Waiyaki Way, Westlands",
+    "priceDisplay": "KES 100 per sq. ft. per month",
+    "specs": ["Offices from 2,200 sq. ft.", "Prominent Waiyaki Way address"],
+    "description": "Fidelity Insurance Centre is a prominent commercial office building situated along Waiyaki Way in Westlands, Nairobi’s premier commercial and business hub. It is in the Waiyaki Way/Safaricom House area.\n\nPositioned to offer maximum corporate visibility along one of the city's major transport arteries, the building provides functional, highly accessible office spaces tailored for financial services, legal firms, logistics headquarters, and growing corporate enterprises.",
+    "detailRows": [
+      { "_key": "type", "label": "Property type", "value": "Commercial offices" },
+      { "_key": "office-space", "label": "Office space", "value": "From 2,200 sq. ft." },
+      { "_key": "rent", "label": "Rent", "value": "KES 100 p.s.f. p.m." },
+      { "_key": "service-charge", "label": "Service charge", "value": "KES 25 p.s.f. p.m." },
+      { "_key": "parking", "label": "Parking", "value": "KES 10,000 each" }
+    ],
+    "detailsFootnote": "Rates exclude VAT.",
+    "imageFolder": "Fidelity",
+    "sortOrder": 9
+  },
+  {
+    "title": "Union Place",
+    "slug": "union-place",
+    "category": "Commercial",
+    "status": "To Let",
+    "location": "JKIA Cargo Village, Nairobi",
+    "priceDisplay": "USD 1 per sq. ft. per month",
+    "specs": ["Warehouses from 1,862 to 14,553 sq. ft.", "Executive logistics hub"],
+    "description": "Union Place is an executive logistics hub and commercial office facility situated along 1st Freight Lane, off Freight Road, in the Cargo Village of Jomo Kenyatta International Airport (JKIA). Designed to serve international freight forwarders, air cargo handlers, clearing agents, and supply chain operators, the property offers a high-security, highly accessible commercial workspace at East Africa's primary aviation gateway.",
+    "detailRows": [
+      { "_key": "type", "label": "Property type", "value": "Warehouses and commercial offices" },
+      { "_key": "warehouse-space", "label": "Warehouse space", "value": "1,862–14,553 sq. ft." },
+      { "_key": "rent", "label": "Rent", "value": "USD 1 p.s.f. p.m." },
+      { "_key": "service-charge", "label": "Service charge", "value": "USD 0.20 p.s.f. p.m." }
+    ],
+    "detailsFootnote": "Rates exclude VAT.",
+    "imageFolder": "Union Place",
+    "sortOrder": 10
+  },
+  {
+    "title": "Lavington Court",
+    "slug": "lavington-court",
+    "category": "Mixed-use",
+    "status": "To Let",
+    "location": "Muthangari Drive, Nairobi",
+    "priceDisplay": "KES 100 per sq. ft. per month",
+    "specs": ["3,100 sq. ft. retail space", "4,300 sq. ft. terrace"],
+    "description": "Situated at Muthangari Drive, this mixed-use property is offering retail space of 3,100 sq. ft. and a 4,300 sq. ft. terrace that is ideal for a restaurant or other suitable retail use.\n\nIt is in the Waiyaki Way/Safaricom House area.",
+    "detailRows": [
+      { "_key": "type", "label": "Property type", "value": "Mixed-use retail" },
+      { "_key": "retail-space", "label": "Retail space", "value": "3,100 sq. ft." },
+      { "_key": "terrace", "label": "Terrace", "value": "4,300 sq. ft." },
+      { "_key": "rent", "label": "Rent", "value": "KES 100 p.s.f. p.m." }
+    ],
+    "detailsFootnote": "Rate excludes VAT.",
+    "imageFolder": "Lavington Court",
+    "sortOrder": 11
+  },
+  {
+    "title": "3-Star Hotel, Nairobi CBD",
+    "slug": "3-star-hotel-nairobi-cbd",
+    "category": "Commercial",
+    "status": "For Sale",
+    "location": "Nairobi CBD",
+    "priceDisplay": "Upon application",
+    "specs": ["119 rooms", "0.36-acre plot", "Going concern"],
+    "description": "A full-service 3-star commercial hotel asset available for sale as a going concern. It comprises 119 rooms, conference facilities, restaurant, bar and lounge, fitness centre, and a rooftop pool, all sited on a 0.36-acre plot.\n\nThis 6-storey hospitality property presents a turnkey investment opportunity combining immediate cash flow, strong corporate client retention, and substantial operational upside. The property offers seamless operational continuity, fully upgraded guest facilities, diverse food and beverage outlets, and extensive conference infrastructure.\n\nIt is on offer as a complete going concern (walk-in, walk-out) inclusive of all operational assets, inventory, and branding framework. More details, including photos, are available upon application.",
+    "detailRows": [
+      { "_key": "type", "label": "Property type", "value": "Commercial hotel" },
+      { "_key": "rooms", "label": "Rooms", "value": "119" },
+      { "_key": "floors", "label": "Floors", "value": "6" },
+      { "_key": "plot", "label": "Plot size", "value": "0.36 acres" },
+      { "_key": "sale", "label": "Sale structure", "value": "Going concern" },
+      { "_key": "price", "label": "Price", "value": "Upon application" }
+    ],
+    "imageFolder": null,
+    "sortOrder": 12
+  },
+  {
+    "title": "The Riverside",
+    "slug": "the-riverside",
+    "category": "Residential",
+    "status": "For Sale",
+    "location": "Riverside Drive, Nairobi",
+    "priceDisplay": "KES 49.5M",
+    "specs": ["4 bedrooms + DSQ", "Luxury apartments"],
+    "description": "The Riverside is an exclusive 4-bedroom plus DSQ luxury apartment available for sale on Riverside Drive.\n\nPositioned minutes away from Westlands, embassies, and international schools, this residence is ideal for executive homeowners and high-net-worth investors.\n\nFeatures include expansive layouts, a fully fitted contemporary kitchen, a luxurious master suite with walk-in wardrobes and designer sanitaryware, supported by a rooftop swimming pool, fully equipped gym, high-speed elevators, backup generator, borehole water supply, access-controlled security, and reserved resident parking.",
+    "detailRows": [
+      { "_key": "type", "label": "Property type", "value": "Luxury apartment" },
+      { "_key": "bedrooms", "label": "Bedrooms", "value": "4 + DSQ" },
+      { "_key": "price", "label": "Sale price", "value": "KES 49.5M" }
+    ],
+    "imageFolder": null,
+    "sortOrder": 13
+  },
+  {
+    "title": "Grosvenor Residence",
+    "slug": "grosvenor-residence",
+    "category": "Residential",
+    "status": "For Sale",
+    "location": "Westlands Road, Nairobi",
+    "priceDisplay": "From KES 8.8M",
+    "specs": ["1 and 2-bedroom suites", "Prime Westlands location"],
+    "description": "Situated on Westlands Road near the GTC complex and Villa Rosa Kempinski, Grosvenor Residence offers elite urban living designed for corporate executives, high-yield investors, and discerning buyers seeking immediate proximity to Nairobi's prime commercial hub.\n\nThis property is steps away from GTC Mall, Sarit Centre, top dining destinations, and seamless access to the Nairobi Expressway via Waiyaki Way.\n\nFeatures include sophisticated interiors with floor-to-ceiling windows, gourmet fully fitted kitchens, serene 1 and 2-bedroom suites supported by an advanced security framework, heated swimming pool, fully equipped fitness centre, residents' lounge, rooftop terrace, high-speed elevators, full backup power generator, and reliable borehole water supply.",
+    "detailRows": [
+      { "_key": "type", "label": "Property type", "value": "Apartments" },
+      { "_key": "one-bedroom", "label": "1 bedroom", "value": "From KES 8.8M" },
+      { "_key": "two-bedroom", "label": "2 bedrooms", "value": "From KES 14.15M" }
+    ],
+    "imageFolder": "Grosvenor Residences",
+    "sortOrder": 14
+  },
+  {
+    "title": "Cheval Riverside",
+    "slug": "cheval-riverside",
+    "category": "Residential",
+    "status": "For Sale",
+    "location": "Riverside Drive, Nairobi",
+    "priceDisplay": "From KES 9.45M",
+    "specs": ["1 and 2-bedroom residences", "Off-plan development"],
+    "description": "This off-plan luxury apartment development is situated along Riverside Drive and is being developed by a reputable developer.\n\nIt is an iconic 20-storey residential development designed with yachting-inspired architecture and an expansive 65% open landscaped footprint. It offers high-end 1 and 2-bedroom residences with optional study layouts, tailored for corporate executives, diplomatic lets, and high-yield investors.\n\nFeatures include floor-to-ceiling panoramic windows, open-concept living and dining layouts and private balconies, supported by a rooftop wellness deck with a heated swimming pool, a fully equipped fitness centre, spa with massage suite, yoga studio, and panoramic skyline views. Lifestyle amenities include a co-working space, private cinema room, residents' lounge, games room, mini-market, high-speed and panoramic glass lifts, borehole water supply, full backup power, smart home integration, EV charging stations, and four basement levels of secure parking.",
+    "detailRows": [
+      { "_key": "type", "label": "Property type", "value": "Off-plan apartments" },
+      { "_key": "one-bedroom", "label": "1 bedroom", "value": "From KES 9.45M" },
+      { "_key": "luxury-one-bedroom", "label": "Luxury 1 bedroom", "value": "From KES 11.7M" },
+      { "_key": "two-bedroom", "label": "2 bedrooms", "value": "From KES 16.5M" }
+    ],
+    "imageFolder": "Cheval Riverside",
+    "sortOrder": 15
+  },
+  {
+    "title": "Rivera Tower",
+    "slug": "rivera-tower",
+    "category": "Residential",
+    "status": "For Sale",
+    "location": "Nairobi",
+    "priceDisplay": "From KES 25M",
+    "specs": ["2 and 3-bedroom apartments", "Dedicated parking"],
+    "description": "Discover modern urban living at Rivera Tower, strategically designed for investors and home buyers seeking comfort, luxury, and convenience.\n\nThis is ideal as a prime residential home or a high-yield buy-to-let investment asset. Available units comprise two 3-bedroom and two 2-bedroom apartments.\n\nFeatures include spacious layouts, modern kitchens, and master en-suite bedrooms supported by high-speed elevators, backup generator, borehole water supply, 24/7 security with CCTV surveillance, and dedicated parking.",
+    "detailRows": [
+      { "_key": "type", "label": "Property type", "value": "Apartments" },
+      { "_key": "three-bedroom", "label": "3 bedrooms", "value": "KES 27M" },
+      { "_key": "two-bedroom", "label": "2 bedrooms", "value": "KES 25M" }
+    ],
+    "imageFolder": "Rivera Towers",
+    "sortOrder": 16
+  },
+  {
+    "title": "Purple Haze",
+    "slug": "purple-haze",
+    "category": "Residential",
+    "status": "For Sale",
+    "location": "Kilimani, Nairobi",
+    "priceDisplay": "KES 24M",
+    "specs": ["Luxury apartment", "DSQ", "2 parking slots"],
+    "description": "Experience world-class living at Purple Haze, an award-winning development located on Kitale Lane, off Dennis Pritt Road in Kilimani. Designed by Singapore-based architects, this ultra-modern address combines high-end international finishes with unparalleled resort-style amenities.\n\nStrategically situated minutes from Yaya Centre, Lavington, and the CBD, this property offers superior rental yield potential for investors and luxurious convenience for homeowners.\n\nFeatures include a generous open-plan layout, a fully fitted Italian kitchen, en-suite bedrooms and DSQ supported by solar-heated swimming pools, a fully equipped TechnoGym fitness centre, steam and sauna facilities, rooftop gardens with party and koroga areas, residents' lounge, cigar room, library, on-site convenience store and restaurant, borehole water supply, solar water heating, full backup generator, high-speed elevators, two reserved parking slots, and 24/7 security with biometric access and CCTV.",
+    "detailRows": [
+      { "_key": "type", "label": "Property type", "value": "Luxury apartment" },
+      { "_key": "parking", "label": "Parking", "value": "2 reserved slots" },
+      { "_key": "price", "label": "Sale price", "value": "KES 24M" }
+    ],
+    "imageFolder": null,
+    "sortOrder": 17
+  },
+  {
+    "title": "Sohail Palms",
+    "slug": "sohail-palms",
+    "category": "Residential",
+    "status": "For Sale",
+    "location": "Mvuli Road, Westlands",
+    "priceDisplay": "KES 24M",
+    "specs": ["Contemporary apartments", "2 parking slots per unit"],
+    "description": "Positioned on Mvuli Road, just off Rhapta Road in the leafy, highly connected pocket of Westlands, Sohail Palms offers refined contemporary living designed for families and high-yield real estate investors alike.\n\nIt is minutes away from Sarit Centre, Westgate Mall, Artcaffè Market Rhapta Square, and key commercial hubs via Waiyaki Way.\n\nFeatures include generous living spaces, a fully fitted kitchen, and en-suite bedrooms supported by high-speed lifts, borehole water supply, a full backup generator, high-speed fibre-optic internet readiness, and two dedicated parking slots per unit.",
+    "detailRows": [
+      { "_key": "type", "label": "Property type", "value": "Apartments" },
+      { "_key": "parking", "label": "Parking", "value": "2 slots per unit" },
+      { "_key": "price", "label": "Sale price", "value": "KES 24M" }
+    ],
+    "imageFolder": "Sohail Palms",
+    "sortOrder": 18
+  },
+  {
+    "title": "Crystal Court",
+    "slug": "crystal-court",
+    "category": "Residential",
+    "status": "For Sale",
+    "location": "Upper Hill, Nairobi",
+    "priceDisplay": "KES 18M",
+    "specs": ["2 bedrooms", "Upper Hill location"],
+    "description": "Crystal Court is a classic 2-bedroom apartment for sale in Upper Hill. Strategically situated on Mawesi Road, just off Elgon Road in the heart of Upper Hill, the property offers accessible, high-yield residential space ideal for corporate lets, medical professionals, and astute real estate investors.\n\nIt is positioned within walking distance of KNH, Nairobi Hospital, major corporate headquarters, and quick access routes to the Nairobi Expressway and CBD.\n\nFeatures include functional living spaces, modern kitchen and service area, and comfortable bedrooms supported by good security, a backup generator for common areas and utility systems, and reliable municipal and auxiliary water storage.",
+    "detailRows": [
+      { "_key": "type", "label": "Property type", "value": "Apartment" },
+      { "_key": "bedrooms", "label": "Bedrooms", "value": "2" },
+      { "_key": "price", "label": "Sale price", "value": "KES 18M" }
+    ],
+    "imageFolder": "Crystal Court",
+    "sortOrder": 19
+  }
+]

@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Purpose Space Realtors
 
-## Getting Started
+Purpose Space is a Next.js website with property content managed in Sanity.
 
-First, run the development server:
+## Local development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the website and
+[http://localhost:3000/studio](http://localhost:3000/studio) to open Sanity
+Studio.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Sanity
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The following variables are required in `.env.local`:
 
-## Learn More
+```bash
+NEXT_PUBLIC_SANITY_PROJECT_ID=
+NEXT_PUBLIC_SANITY_DATASET=production
+NEXT_PUBLIC_SANITY_API_VERSION=2024-01-01
+```
 
-To learn more about Next.js, take a look at the following resources:
+To import property content and upload images, also provide a private write token:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+SANITY_API_WRITE_TOKEN=
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Never prefix the write token with `NEXT_PUBLIC_` and never commit it.
 
-## Deploy on Vercel
+The property import is idempotent. Put the downloaded SharePoint folders inside
+one local directory, then run:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+PROPERTY_IMAGE_ROOT=/absolute/path/to/Website\ Photos npm run sanity:import
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Listings without a matching photo folder are created as unpublished drafts. Use
+`npm run sanity:import -- --dry-run` to validate the manifest without writing to
+Sanity.

@@ -204,7 +204,7 @@ const MOCK_LISTINGS: Listing[] = [
   },
 ];
 
-const PROPERTIES_QUERY = `*[_type == "property"] | order(_createdAt desc) {
+const PROPERTIES_QUERY = `*[_type == "property" && defined(slug.current)] | order(featured desc, sortOrder asc, title asc) {
   "id": _id,
   "slug": slug.current,
   title,
