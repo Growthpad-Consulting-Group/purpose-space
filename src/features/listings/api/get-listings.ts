@@ -272,7 +272,7 @@ function mapListing(property: SanityListing): Listing {
     locationNote: property.locationNote,
     imageUrl: property.image
       ? urlForImage(property.image).width(900).height(1100).url()
-      : "/images/hero.png",
+      : "/images/property-placeholder.svg",
     gallery: property.gallery?.map((image) =>
       urlForImage(image).width(900).height(1100).url()
     ),

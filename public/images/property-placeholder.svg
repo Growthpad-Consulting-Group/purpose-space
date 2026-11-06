@@ -1,0 +1,12 @@
+<svg width="1600" height="1100" viewBox="0 0 1600 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1100" fill="#063C3C"/>
+  <path d="M0 836L377 631L745 836L1120 576L1600 842V1100H0V836Z" fill="#0B4A49"/>
+  <path d="M508 758V328H1092V758" stroke="#C6A15B" stroke-width="4"/>
+  <path d="M617 758V458H983V758" stroke="#C6A15B" stroke-width="4"/>
+  <path d="M692 550H908M692 630H908" stroke="#C6A15B" stroke-width="3" opacity="0.65"/>
+  <path d="M800 458V758" stroke="#C6A15B" stroke-width="3" opacity="0.65"/>
+  <circle cx="800" cy="294" r="10" fill="#C6A15B"/>
+  <path d="M800 304V328" stroke="#C6A15B" stroke-width="4"/>
+  <text x="800" y="900" fill="#F4F0E8" font-family="Arial, Helvetica, sans-serif" font-size="32" letter-spacing="7" text-anchor="middle">PURPOSE SPACE</text>
+  <text x="800" y="958" fill="#C6A15B" font-family="Arial, Helvetica, sans-serif" font-size="18" letter-spacing="5" text-anchor="middle">PROPERTY IMAGES AVAILABLE ON REQUEST</text>
+</svg>

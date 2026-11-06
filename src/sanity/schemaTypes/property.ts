@@ -175,7 +175,8 @@ export const propertyType = defineType({
     defineField({
       name: "image",
       title: "Primary image",
-      description: "Used on listing cards and as the property-page hero.",
+      description:
+        "Used on listing cards and as the property-page hero. Leave empty to use the branded website placeholder.",
       type: "image",
       group: "media",
       options: { hotspot: true },
@@ -187,7 +188,6 @@ export const propertyType = defineType({
           validation: (rule) => rule.required(),
         }),
       ],
-      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "gallery",

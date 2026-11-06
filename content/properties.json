@@ -241,6 +241,7 @@
       { "_key": "price", "label": "Price", "value": "Upon application" }
     ],
     "imageFolder": null,
+    "publishWithoutImages": true,
     "sortOrder": 12
   },
   {

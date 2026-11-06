@@ -9,11 +9,7 @@ import { Modal } from "@/shared/ui/Modal";
 export function PropertyGallery({ listing }: { listing: Listing }) {
   const images = listing.gallery?.length
     ? listing.gallery
-    : [
-        listing.imageUrl,
-        "/images/gallery-secondary-1.jpg",
-        "/images/gallery-secondary-2.jpg",
-      ];
+    : [listing.imageUrl];
 
   const [main, ...rest] = images;
   const [openIndex, setOpenIndex] = useState(0);

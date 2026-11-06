@@ -3,6 +3,7 @@ import { PropertiesHero } from "@/components/sections/PropertiesHero";
 import {
   ClearPropertyFilters,
   PropertyFilters,
+  PropertySearch,
 } from "@/components/sections/PropertyFilters";
 import { ListingCard } from "@/features/listings/components/ListingCard";
 import { getListings } from "@/features/listings/api/get-listings";
@@ -27,6 +28,7 @@ type PropertySearchParams = {
   location?: string;
   type?: string;
   price?: string;
+  q?: string;
 };
 
 const PRICE_RANGES = [
@@ -81,12 +83,27 @@ function matchesPrice(listing: Listing, range?: string) {
 }
 
 function matchesFilters(listing: Listing, filters: PropertySearchParams) {
+  const query = filters.q?.trim().toLocaleLowerCase();
+  const searchableText = [
+    listing.title,
+    listing.location,
+    listing.category,
+    listing.status,
+    listing.priceDisplay,
+    propertyType(listing),
+    ...listing.specs,
+    listing.description ?? "",
+  ]
+    .join(" ")
+    .toLocaleLowerCase();
+
   return (
     (!filters.category || listing.category === filters.category) &&
     (!filters.status || listing.status === filters.status) &&
     (!filters.location || listing.location === filters.location) &&
     (!filters.type || propertyType(listing) === filters.type) &&
-    matchesPrice(listing, filters.price)
+    matchesPrice(listing, filters.price) &&
+    (!query || searchableText.includes(query))
   );
 }
 
@@ -102,7 +119,7 @@ export default async function PropertiesPage({
   const filteredListings = listings.filter((listing) =>
     matchesFilters(listing, filters),
   );
-  const hasActiveFilters = Boolean(
+  const hasActiveSelectionFilters = Boolean(
     filters.category ||
       filters.status ||
       filters.location ||
@@ -149,15 +166,16 @@ export default async function PropertiesPage({
                   Homes and commercial spaces currently represented by
                   Purpose Space. Refine the selection above.
                 </p>
-                <div className="flex flex-wrap items-center gap-4">
+                <div className="flex flex-wrap items-center gap-4 sm:flex-nowrap">
                   <p
                     aria-live="polite"
-                    className="rounded-md border border-brand-gold px-6 py-3 text-sm font-medium text-brand-green"
+                    className="shrink-0 rounded-md border border-brand-gold px-6 py-3 text-sm font-medium whitespace-nowrap text-brand-green"
                   >
                     {filteredListings.length}{" "}
                     {filteredListings.length === 1 ? "property" : "properties"} found
                   </p>
-                  {hasActiveFilters ? <ClearPropertyFilters /> : null}
+                  <PropertySearch />
+                  {hasActiveSelectionFilters ? <ClearPropertyFilters /> : null}
                 </div>
               </div>
             </div>

@@ -5,6 +5,8 @@ import { createClient } from "@sanity/client";
 
 const IMAGE_EXTENSIONS = new Set([".avif", ".gif", ".jpeg", ".jpg", ".png", ".webp"]);
 const DRY_RUN = process.argv.includes("--dry-run");
+const slugArg = process.argv.find((argument) => argument.startsWith("--slug="));
+const requestedSlug = slugArg?.slice("--slug=".length);
 const manifestPath = resolve(
   process.env.PROPERTY_MANIFEST || "content/properties.json",
 );
@@ -30,7 +32,14 @@ if (!existsSync(manifestPath)) {
   throw new Error(`Property manifest not found: ${manifestPath}`);
 }
 
-const properties = JSON.parse(readFileSync(manifestPath, "utf8"));
+const manifestProperties = JSON.parse(readFileSync(manifestPath, "utf8"));
+const properties = requestedSlug
+  ? manifestProperties.filter((property) => property.slug === requestedSlug)
+  : manifestProperties;
+
+if (requestedSlug && properties.length === 0) {
+  throw new Error(`Property not found in manifest: ${requestedSlug}`);
+}
 const client = createClient({
   projectId,
   dataset,
@@ -72,6 +81,7 @@ const missingImageFolders = [];
 
 for (const [index, property] of properties.entries()) {
   const imagePaths = findImages(property.imageFolder);
+  const canPublish = imagePaths.length > 0 || property.publishWithoutImages === true;
 
   if (imageRoot && property.imageFolder && imagePaths.length === 0) {
     missingImageFolders.push(property.imageFolder);
@@ -83,7 +93,7 @@ for (const [index, property] of properties.entries()) {
         property.imageFolder ? ` from “${property.imageFolder}”` : " — no image folder supplied"
       }`,
     );
-    if (imagePaths.length > 0) {
+    if (canPublish) {
       importableCount += 1;
     } else {
       draftCount += 1;
@@ -98,23 +108,26 @@ for (const [index, property] of properties.entries()) {
 
   const document = {
     ...property,
-    _id: images.length > 0
+    _id: canPublish
       ? `property-${property.slug}`
       : `drafts.property-${property.slug}`,
     _type: "property",
     slug: { _type: "slug", current: property.slug },
     sortOrder: property.sortOrder ?? index + 1,
     featured: property.featured ?? false,
-    image: images[0],
-    gallery: images,
+    ...(images.length > 0 ? { image: images[0], gallery: images } : {}),
   };
 
   delete document.imageFolder;
+  delete document.publishWithoutImages;
 
   await client.createOrReplace(document);
-  if (images.length > 0) {
+  if (canPublish) {
+    await client.delete(`drafts.property-${property.slug}`);
     importableCount += 1;
-    console.log(`Published ${property.title} with ${images.length} image(s).`);
+    console.log(
+      `Published ${property.title} with ${images.length} image(s)${images.length === 0 ? " and the website placeholder" : ""}.`,
+    );
   } else {
     draftCount += 1;
     console.log(`Created an unpublished draft for ${property.title}; images are still required.`);
